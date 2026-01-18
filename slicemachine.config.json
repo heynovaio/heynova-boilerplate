@@ -1,0 +1,5 @@
+{
+  "repositoryName": "heynova-boilerplate",
+  "adapter": "@slicemachine/adapter-next",
+  "libraries": ["./slices"]
+}
