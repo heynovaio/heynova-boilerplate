@@ -1,0 +1,41 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"background": {
+				"__TYPE__": "FieldContent",
+				"value": "Secondary",
+				"type": "Select"
+			},
+			"subtitle": {
+				"__TYPE__": "FieldContent",
+				"value": "world",
+				"type": "Text"
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Rocky"
+						}
+					}
+				]
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Labore esse quis eu. Aliqua Lorem voluptate amet elit."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

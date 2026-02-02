@@ -1,0 +1,16 @@
+{
+  "id": "multi_link",
+  "type": "SharedSlice",
+  "name": "MultiLink",
+  "description": "MultiLink",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}
