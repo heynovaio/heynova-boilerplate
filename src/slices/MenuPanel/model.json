@@ -1,0 +1,16 @@
+{
+  "id": "menu_panel",
+  "type": "SharedSlice",
+  "name": "MenuPanel",
+  "description": "MenuPanel",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}

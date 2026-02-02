@@ -1,0 +1,60 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"background": {
+				"__TYPE__": "FieldContent",
+				"value": "Secondary",
+				"type": "Select"
+			},
+			"subtitle": {
+				"__TYPE__": "FieldContent",
+				"value": "throat",
+				"type": "Text"
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Difficulty"
+						}
+					}
+				]
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Sunt minim enim in dolore qui Lorem exercitation. Aliquip deserunt nisi labore laborum qui id."
+						}
+					}
+				]
+			},
+			"text_formatting": {
+				"__TYPE__": "BooleanContent",
+				"value": false
+			},
+			"buttons": {
+				"__TYPE__": "RepeatableContent",
+				"type": "Link",
+				"value": [
+					{
+						"__TYPE__": "LinkContent",
+						"key": "aafd90ab-2c99-44d4-a653-8c51aed3a692",
+						"value": {
+							"__TYPE__": "ExternalLink",
+							"url": "http://google.com",
+							"text": "choice"
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

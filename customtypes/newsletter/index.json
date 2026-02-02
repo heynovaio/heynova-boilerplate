@@ -1,0 +1,10 @@
+{
+  "format": "custom",
+  "id": "newsletter",
+  "json": {
+    "Main": {}
+  },
+  "label": "Newsletter",
+  "repeatable": false,
+  "status": true
+}

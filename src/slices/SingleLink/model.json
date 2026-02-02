@@ -1,0 +1,16 @@
+{
+  "id": "single_link",
+  "type": "SharedSlice",
+  "name": "SingleLink",
+  "description": "SingleLink",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}
