@@ -1,0 +1,18 @@
+@theme {
+  /* Colours */
+  --color-midnight: #0f002e;
+  --color-teal: #006075;
+  --color-teal-md: #009daa;
+  --color-teal-muted: #63b2b9;
+  --color-teal-drk: #006075;
+  --color-aqua: #97e1e5;
+  --color-lavendar: #c0a2ff;
+  --color-purple-drk: #1e0073;
+  --color-purple-lt: #caccf8;
+  --color-red: #d70449;
+  --color-wine: #940050;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-light-blue: #ddf5f7;
+  --color-navy: rgba(0, 96, 117, 0.4);
+}

@@ -195,6 +195,60 @@ export type BlogHubDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Content for Colors documents
+ */
+interface ColorsDocumentData {
+  /**
+   * Primary field in *Colors*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: colors.primary
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  primary: prismic.ColorField;
+
+  /**
+   * Secondary field in *Colors*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: colors.secondary
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  secondary: prismic.KeyTextField;
+
+  /**
+   * Accent field in *Colors*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: colors.accent
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  accent: prismic.ColorField;
+}
+
+/**
+ * Colors document from Prismic
+ *
+ * - **API ID**: `colors`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ColorsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<ColorsDocumentData>,
+    "colors",
+    Lang
+  >;
+
 type ContactDocumentDataSlicesSlice =
   | NumberedListSlice
   | ImageTextSlice
@@ -487,14 +541,52 @@ export type GlobalDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Item in *Menus → Call to Action Button*
+ */
+export interface MenusDocumentDataCallToActionButtonItem {
+  /**
+   * Link field in *Menus → Call to Action Button*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menus.call_to_action_button[].link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+
+  /**
+   * Icon (Optional) field in *Menus → Call to Action Button*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menus.call_to_action_button[].icon
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  icon: prismic.ImageField<never>;
+}
+
 type MenusDocumentDataSlicesSlice = SingleLinkSlice | MenuPanelSlice;
 
-type MenusDocumentDataSlices1Slice = MultiLinkSlice;
+type MenusDocumentDataSlices1Slice = MultiLinkColumnSlice;
 
 /**
  * Content for Menus documents
  */
 interface MenusDocumentData {
+  /**
+   * Call to Action Button field in *Menus*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menus.call_to_action_button[]
+   * - **Tab**: Header
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  call_to_action_button: prismic.GroupField<
+    Simplify<MenusDocumentDataCallToActionButtonItem>
+  >;
+
   /**
    * Slice Zone field in *Menus*
    *
@@ -1033,6 +1125,7 @@ export type TeamMemberDocument<Lang extends string = string> =
 export type AllDocumentTypes =
   | BlogDocument
   | BlogHubDocument
+  | ColorsDocument
   | ContactDocument
   | GlobalDocument
   | MenusDocument
@@ -1686,6 +1779,101 @@ type MapSliceVariation = MapSliceDefault;
 export type MapSlice = prismic.SharedSlice<"map", MapSliceVariation>;
 
 /**
+ * Item in *MenuPanel → Default → Primary → Link with Paragraph*
+ */
+export interface MenuPanelSliceDefaultPrimaryLinkWithParagraphItem {
+  /**
+   * Title field in *MenuPanel → Default → Primary → Link with Paragraph*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu_panel.default.primary.link_with_paragraph[].title
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  title: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+
+  /**
+   * Body field in *MenuPanel → Default → Primary → Link with Paragraph*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu_panel.default.primary.link_with_paragraph[].body
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  body: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *MenuPanel → Default → Primary*
+ */
+export interface MenuPanelSliceDefaultPrimary {
+  /**
+   * Menu Display field in *MenuPanel → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu_panel.default.primary.menu_display
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  menu_display: prismic.KeyTextField;
+
+  /**
+   * Title field in *MenuPanel → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu_panel.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Body field in *MenuPanel → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu_panel.default.primary.body
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * Columns field in *MenuPanel → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: menu_panel.default.primary.columns
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  columns: prismic.BooleanField;
+
+  /**
+   * Links field in *MenuPanel → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu_panel.default.primary.links
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  links: prismic.Repeatable<
+    prismic.LinkField<string, string, unknown, prismic.FieldState, never>
+  >;
+
+  /**
+   * Link with Paragraph field in *MenuPanel → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu_panel.default.primary.link_with_paragraph[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  link_with_paragraph: prismic.GroupField<
+    Simplify<MenuPanelSliceDefaultPrimaryLinkWithParagraphItem>
+  >;
+}
+
+/**
  * Default variation for MenuPanel Slice
  *
  * - **API ID**: `default`
@@ -1694,7 +1882,7 @@ export type MapSlice = prismic.SharedSlice<"map", MapSliceVariation>;
  */
 export type MenuPanelSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<MenuPanelSliceDefaultPrimary>,
   never
 >;
 
@@ -1716,33 +1904,60 @@ export type MenuPanelSlice = prismic.SharedSlice<
 >;
 
 /**
- * Default variation for MultiLink Slice
+ * Primary content in *MultiLinkColumn → Default → Primary*
+ */
+export interface MultiLinkColumnSliceDefaultPrimary {
+  /**
+   * Title field in *MultiLinkColumn → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: multi_link_column.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Link field in *MultiLinkColumn → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: multi_link_column.default.primary.link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  link: prismic.Repeatable<
+    prismic.LinkField<string, string, unknown, prismic.FieldState, never>
+  >;
+}
+
+/**
+ * Default variation for MultiLinkColumn Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slices
  */
-export type MultiLinkSliceDefault = prismic.SharedSliceVariation<
+export type MultiLinkColumnSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<MultiLinkColumnSliceDefaultPrimary>,
   never
 >;
 
 /**
- * Slice variation for *MultiLink*
+ * Slice variation for *MultiLinkColumn*
  */
-type MultiLinkSliceVariation = MultiLinkSliceDefault;
+type MultiLinkColumnSliceVariation = MultiLinkColumnSliceDefault;
 
 /**
- * MultiLink Shared Slice
+ * MultiLinkColumn Shared Slice
  *
- * - **API ID**: `multi_link`
- * - **Description**: MultiLink
+ * - **API ID**: `multi_link_column`
+ * - **Description**: MultiLinkColumn
  * - **Documentation**: https://prismic.io/docs/slices
  */
-export type MultiLinkSlice = prismic.SharedSlice<
-  "multi_link",
-  MultiLinkSliceVariation
+export type MultiLinkColumnSlice = prismic.SharedSlice<
+  "multi_link_column",
+  MultiLinkColumnSliceVariation
 >;
 
 /**
@@ -1951,6 +2166,45 @@ export type SimpleTextSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *SingleLink → Default → Primary*
+ */
+export interface SingleLinkSliceDefaultPrimary {
+  /**
+   * Icon field in *SingleLink → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: single_link.default.primary.icon
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  icon: prismic.ImageField<never>;
+
+  /**
+   * Link field in *SingleLink → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: single_link.default.primary.link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+
+  /**
+   * Button Type field in *SingleLink → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Text
+   * - **API ID Path**: single_link.default.primary.button_type
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  button_type: prismic.SelectField<
+    "Text" | "Primary" | "Secondary" | "Outline",
+    "filled"
+  >;
+}
+
+/**
  * Default variation for SingleLink Slice
  *
  * - **API ID**: `default`
@@ -1959,7 +2213,7 @@ export type SimpleTextSlice = prismic.SharedSlice<
  */
 export type SingleLinkSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<SingleLinkSliceDefaultPrimary>,
   never
 >;
 
@@ -2306,6 +2560,8 @@ declare module "@prismicio/client" {
       BlogHubDocument,
       BlogHubDocumentData,
       BlogHubDocumentDataSlicesSlice,
+      ColorsDocument,
+      ColorsDocumentData,
       ContactDocument,
       ContactDocumentData,
       ContactDocumentDataSlicesSlice,
@@ -2313,6 +2569,7 @@ declare module "@prismicio/client" {
       GlobalDocumentData,
       MenusDocument,
       MenusDocumentData,
+      MenusDocumentDataCallToActionButtonItem,
       MenusDocumentDataSlicesSlice,
       MenusDocumentDataSlices1Slice,
       NewsletterDocument,
@@ -2357,11 +2614,14 @@ declare module "@prismicio/client" {
       MapSliceVariation,
       MapSliceDefault,
       MenuPanelSlice,
+      MenuPanelSliceDefaultPrimaryLinkWithParagraphItem,
+      MenuPanelSliceDefaultPrimary,
       MenuPanelSliceVariation,
       MenuPanelSliceDefault,
-      MultiLinkSlice,
-      MultiLinkSliceVariation,
-      MultiLinkSliceDefault,
+      MultiLinkColumnSlice,
+      MultiLinkColumnSliceDefaultPrimary,
+      MultiLinkColumnSliceVariation,
+      MultiLinkColumnSliceDefault,
       NumberedListSlice,
       NumberedListSliceVariation,
       NumberedListSliceDefault,
@@ -2374,6 +2634,7 @@ declare module "@prismicio/client" {
       SimpleTextSliceVariation,
       SimpleTextSliceDefault,
       SingleLinkSlice,
+      SingleLinkSliceDefaultPrimary,
       SingleLinkSliceVariation,
       SingleLinkSliceDefault,
       TestimonialSlice,

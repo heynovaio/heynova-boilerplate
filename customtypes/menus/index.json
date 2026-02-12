@@ -6,6 +6,34 @@
   "status": true,
   "json": {
     "Header": {
+      "call_to_action_button": {
+        "type": "Group",
+        "config": {
+          "label": "Call to Action Button",
+          "repeat": true,
+          "fields": {
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": null,
+                "allowTargetBlank": true,
+                "allowText": true,
+                "repeat": false
+              }
+            },
+            "icon": {
+              "type": "Image",
+              "config": {
+                "label": "Icon (Optional)",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
@@ -56,7 +84,7 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "multi_link": {
+            "multi_link_column": {
               "type": "SharedSlice"
             }
           }

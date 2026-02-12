@@ -1,8 +1,8 @@
 {
-  "id": "multi_link",
+  "id": "multi_link_column",
   "type": "SharedSlice",
-  "name": "MultiLink",
-  "description": "MultiLink",
+  "name": "MultiLinkColumn",
+  "description": "MultiLinkColumn",
   "variations": [
     {
       "id": "default",
@@ -10,7 +10,30 @@
       "docURL": "...",
       "version": "initial",
       "description": "Default",
-      "imageUrl": ""
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading4"
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Link",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": true
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

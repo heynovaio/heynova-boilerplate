@@ -1,0 +1,19 @@
+/* Styles are organized alphabetically */
+/* File is primarily for color + visual styles, layout styling is excluded */
+.content-box {
+}
+
+.content-box__menupanel {
+  @apply border-r-[0.5px] border-white basis-1/3 lg:pr-32 pr-16 py-5;
+}
+
+.header {
+  background: rgba(var(--color-opacity-teal), 0.2);
+  color: var(--color-white);
+}
+
+.top-banner {
+  background: var(--color-teal);
+  color: var(--color-white);
+  border-bottom: 1px solid rgb(var(--color-opacity-aqua), 0.5);
+}

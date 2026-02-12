@@ -1,0 +1,32 @@
+{
+  "format": "custom",
+  "id": "colors",
+  "label": "Colors",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "primary": {
+        "type": "Color",
+        "config": {
+          "label": "Primary",
+          "placeholder": ""
+        }
+      },
+      "secondary": {
+        "type": "Text",
+        "config": {
+          "label": "Secondary",
+          "placeholder": ""
+        }
+      },
+      "accent": {
+        "type": "Color",
+        "config": {
+          "label": "Accent",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}
