@@ -20,9 +20,9 @@ interface FooterProps {
 
 export const Footer = ({ global, slices, footerData }: FooterProps) => {
   return (
-    <footer className=" text-white flex flex-col justify-center items-center">
+    <footer className="flex flex-col justify-center items-center">
       <nav className="py-14 px-5  mx-auto max-w-screen-xl w-full flex flex-col">
-        <div className="flex flex-col md:flex-row flex-wrap justify-center md:justify-between gap-x-8 gap-y-12 w-full text-center md:text-left social-links">
+        <div className="flex flex-col md:flex-row flex-wrap justify-center md:justify-between gap-x-8 gap-y-12 w-full text-center md:text-left">
           <div className="flex flex-col items-center lg:items-start">
             <ResponsiveImage
               field={global?.site_logo}

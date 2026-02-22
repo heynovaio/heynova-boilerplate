@@ -24,10 +24,7 @@ export function Layout({
   locales,
   menus,
   global,
-  children,
-  hideTopFooter,
-  pageType,
-  programLogo,
+  children
 }: LayoutProps) {
   return (
     <>
@@ -49,7 +46,6 @@ export function Layout({
         >
           {children}
         </main>
-
         <Footer slices={menus.slices1} global={global} />
       </div>
     </>

@@ -1515,15 +1515,28 @@ export type CarouselSlice = prismic.SharedSlice<
  */
 export interface ImageTextSliceDefaultPrimary {
   /**
-   * Background field in *ImageText → Default → Primary*
+   * Background Color field in *ImageText → Default → Primary*
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
    * - **Default Value**: None
-   * - **API ID Path**: image_text.default.primary.background
+   * - **API ID Path**: image_text.default.primary.background_color
    * - **Documentation**: https://prismic.io/docs/fields/select
    */
-  background: prismic.SelectField<"None" | "Primary" | "Secondary", "filled">;
+  background_color: prismic.SelectField<
+    "None" | "Primary" | "Secondary",
+    "filled"
+  >;
+
+  /**
+   * Image field in *ImageText → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_text.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
 
   /**
    * Image Orientation field in *ImageText → Default → Primary*
@@ -1537,14 +1550,15 @@ export interface ImageTextSliceDefaultPrimary {
   image_left: prismic.BooleanField;
 
   /**
-   * Title field in *ImageText → Default → Primary*
+   * Image Fit field in *ImageText → Default → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Select
    * - **Placeholder**: *None*
-   * - **API ID Path**: image_text.default.primary.title
-   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   * - **Default Value**: contain
+   * - **API ID Path**: image_text.default.primary.imageFit
+   * - **Documentation**: https://prismic.io/docs/fields/select
    */
-  title: prismic.RichTextField;
+  imageFit: prismic.SelectField<"contain" | "cover", "filled">;
 
   /**
    * Subtitle field in *ImageText → Default → Primary*
@@ -1557,6 +1571,16 @@ export interface ImageTextSliceDefaultPrimary {
   subtitle: prismic.KeyTextField;
 
   /**
+   * Title field in *ImageText → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_text.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
    * Description field in *ImageText → Default → Primary*
    *
    * - **Field Type**: Rich Text
@@ -1565,16 +1589,6 @@ export interface ImageTextSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
   description: prismic.RichTextField;
-
-  /**
-   * Image field in *ImageText → Default → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_text.default.primary.image
-   * - **Documentation**: https://prismic.io/docs/fields/image
-   */
-  image: prismic.ImageField<never>;
 
   /**
    * Button field in *ImageText → Default → Primary*
@@ -1603,9 +1617,125 @@ export type ImageTextSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *ImageText → Video → Primary*
+ */
+export interface ImageTextSliceVideoPrimary {
+  /**
+   * Background Color field in *ImageText → Video → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: None
+   * - **API ID Path**: image_text.video.primary.background_color
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  background_color: prismic.SelectField<
+    "None" | "Primary" | "Secondary",
+    "filled"
+  >;
+
+  /**
+   * Image Orientation field in *ImageText → Video → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: image_text.video.primary.image_left
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  image_left: prismic.BooleanField;
+
+  /**
+   * Subtitle field in *ImageText → Video → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_text.video.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * Title field in *ImageText → Video → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_text.video.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *ImageText → Video → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_text.video.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Button field in *ImageText → Video → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_text.video.primary.button
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  button: prismic.Repeatable<
+    prismic.LinkField<string, string, unknown, prismic.FieldState, never>
+  >;
+
+  /**
+   * Image field in *ImageText → Video → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_text.video.primary.image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Video field in *ImageText → Video → Primary*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_text.video.primary.video
+   * - **Documentation**: https://prismic.io/docs/fields/embed
+   */
+  video: prismic.EmbedField;
+
+  /**
+   * Image Fit field in *ImageText → Video → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: contain
+   * - **API ID Path**: image_text.video.primary.imageFit
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  imageFit: prismic.SelectField<"contain" | "cover", "filled">;
+}
+
+/**
+ * Video variation for ImageText Slice
+ *
+ * - **API ID**: `video`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ImageTextSliceVideo = prismic.SharedSliceVariation<
+  "video",
+  Simplify<ImageTextSliceVideoPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *ImageText*
  */
-type ImageTextSliceVariation = ImageTextSliceDefault;
+type ImageTextSliceVariation = ImageTextSliceDefault | ImageTextSliceVideo;
 
 /**
  * ImageText Shared Slice
@@ -1961,6 +2091,76 @@ export type MultiLinkColumnSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *NumberedList → Default → Primary → List*
+ */
+export interface NumberedListSliceDefaultPrimaryListItem {
+  /**
+   * Title field in *NumberedList → Default → Primary → List*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: numbered_list.default.primary.list[].title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Body field in *NumberedList → Default → Primary → List*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: numbered_list.default.primary.list[].body
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  body: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *NumberedList → Default → Primary*
+ */
+export interface NumberedListSliceDefaultPrimary {
+  /**
+   * Background field in *NumberedList → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: numbered_list.default.primary.background
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  background: prismic.SelectField<"None" | "Primary" | "Secondary">;
+
+  /**
+   * Title field in *NumberedList → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: numbered_list.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Body field in *NumberedList → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: numbered_list.default.primary.body
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * List field in *NumberedList → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: numbered_list.default.primary.list[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  list: prismic.GroupField<Simplify<NumberedListSliceDefaultPrimaryListItem>>;
+}
+
+/**
  * Default variation for NumberedList Slice
  *
  * - **API ID**: `default`
@@ -1969,7 +2169,7 @@ export type MultiLinkColumnSlice = prismic.SharedSlice<
  */
 export type NumberedListSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<NumberedListSliceDefaultPrimary>,
   never
 >;
 
@@ -2004,16 +2204,6 @@ export interface RichTextSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/select
    */
   background: prismic.SelectField<"None" | "Primary" | "Secondary", "filled">;
-
-  /**
-   * Subtitle field in *RichText → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: rich_text.default.primary.subtitle
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  subtitle: prismic.KeyTextField;
 
   /**
    * Title field in *RichText → Default → Primary*
@@ -2603,8 +2793,10 @@ declare module "@prismicio/client" {
       CarouselSliceDefault,
       ImageTextSlice,
       ImageTextSliceDefaultPrimary,
+      ImageTextSliceVideoPrimary,
       ImageTextSliceVariation,
       ImageTextSliceDefault,
+      ImageTextSliceVideo,
       LogoListSlice,
       LogoListSliceDefaultPrimaryLogoItem,
       LogoListSliceDefaultPrimary,
@@ -2623,6 +2815,8 @@ declare module "@prismicio/client" {
       MultiLinkColumnSliceVariation,
       MultiLinkColumnSliceDefault,
       NumberedListSlice,
+      NumberedListSliceDefaultPrimaryListItem,
+      NumberedListSliceDefaultPrimary,
       NumberedListSliceVariation,
       NumberedListSliceDefault,
       RichTextSlice,
