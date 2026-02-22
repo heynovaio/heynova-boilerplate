@@ -26,18 +26,9 @@ interface HeaderProps {
   global?: GlobalDocumentData;
 }
 
-export const Header: React.FC<HeaderProps> = ({
-  // menus,
-  logo,
-  slices,
-  locales,
-  global,
-}) => {
-
+export const Header: React.FC<HeaderProps> = ({ logo, slices, locales }) => {
   return (
-    <header
-      className="sticky top-0 z-50 header"
-    >
+    <header className="sticky top-0 z-50 header">
       <nav
         aria-label="Main Nav"
         className="flex items-center px-5 py-3 gap-3 justify-between"
@@ -69,15 +60,15 @@ export const Header: React.FC<HeaderProps> = ({
                   className="inline-flex justify-center w-full p-2 relative group"
                   aria-label="Main Menu"
                 >
-                  <div className="flex flex-col justify-center items-center w-8 h-8">
+                  <div className="menu-button flex flex-col justify-center items-center w-8 h-8">
                     <span
-                      className={`block absolute h-0.5 w-8 gradient-light-full transform transition duration-300 ease-in-out ${open ? "rotate-45 translate-y-0" : "-translate-y-2"}`}
+                      className={`block absolute h-0.5 w-8 transform transition duration-300 ease-in-out ${open ? "rotate-45 translate-y-0" : "-translate-y-2"}`}
                     ></span>
                     <span
-                      className={`block absolute h-0.5 w-8 gradient-light-full transform transition duration-300 ease-in-out ${open ? "opacity-0" : "opacity-100"}`}
+                      className={`block absolute h-0.5 w-8 transform transition duration-300 ease-in-out ${open ? "opacity-0" : "opacity-100"}`}
                     ></span>
                     <span
-                      className={`block absolute h-0.5 w-8 gradient-light-full transform transition duration-300 ease-in-out ${open ? "-rotate-45 translate-y-0" : "translate-y-2"}`}
+                      className={`block absolute h-0.5 w-8 transform transition duration-300 ease-in-out ${open ? "-rotate-45 translate-y-0" : "translate-y-2"}`}
                     ></span>
                   </div>
                 </PopoverButton>
@@ -100,7 +91,7 @@ export const Header: React.FC<HeaderProps> = ({
                     >
                       <SliceZone slices={slices} components={components} />
                     </div>
-                    {locales && locales.length > 1 && (
+                    {locales && (
                       <LanguageSwitcher
                         locales={locales}
                         classname="bottom-0 fixed right-0"

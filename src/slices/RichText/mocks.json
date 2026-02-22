@@ -8,11 +8,6 @@
 				"value": "Secondary",
 				"type": "Select"
 			},
-			"subtitle": {
-				"__TYPE__": "FieldContent",
-				"value": "world",
-				"type": "Text"
-			},
 			"title": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [

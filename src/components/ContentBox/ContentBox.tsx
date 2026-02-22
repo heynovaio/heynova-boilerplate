@@ -1,5 +1,5 @@
 import { PrismicRichText } from "@prismicio/react";
-import React, { ReactNode, useMemo } from "react";
+import React, { ReactNode } from "react";
 import clsx from "clsx";
 import { getWidthClassNames, WidthProp } from "@/utils";
 import { RichTextField } from "@prismicio/client";
@@ -20,7 +20,7 @@ export const ContentBox: React.FC<ContentBoxProps> = ({
   tagline,
   content,
   buttons,
-  width = "full",
+  width = "standard",
   className, // Have different content-box types -> Make a list of the styles available
   ...props
 }) => {
@@ -39,7 +39,11 @@ export const ContentBox: React.FC<ContentBoxProps> = ({
       <div className="flex flex-col w-full gap-2 content-box__title-container">
         {(tagline || title) && (
           <div>
-            {tagline && <div className="text-bodyLarge tagline">{tagline}</div>}
+            {tagline && (
+              <div className="text-bodyLarge text-accent tagline">
+                {tagline}
+              </div>
+            )}
             {typeof title === "string" ? (
               <h2>{title}</h2>
             ) : (

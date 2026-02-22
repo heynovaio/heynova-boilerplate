@@ -12,10 +12,99 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "background": {
+        "background_color": {
           "type": "Select",
           "config": {
-            "label": "Background",
+            "label": "Background Color",
+            "placeholder": "",
+            "options": [
+              "None",
+              "Primary",
+              "Secondary"
+            ],
+            "default_value": "None"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "image_left": {
+          "type": "Boolean",
+          "config": {
+            "label": "Image Orientation",
+            "placeholder_false": "Left",
+            "placeholder_true": "Right",
+            "default_value": false
+          }
+        },
+        "imageFit": {
+          "type": "Select",
+          "config": {
+            "label": "Image Fit",
+            "placeholder": "",
+            "options": [
+              "contain",
+              "cover"
+            ],
+            "default_value": "contain"
+          }
+        },
+        "subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "Subtitle",
+            "placeholder": ""
+          }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2,heading3,heading4"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "button": {
+          "type": "Link",
+          "config": {
+            "label": "Button",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": true
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "video",
+      "name": "Video",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "background_color": {
+          "type": "Select",
+          "config": {
+            "label": "Background Color",
             "placeholder": "",
             "options": [
               "None",
@@ -34,20 +123,20 @@
             "default_value": false
           }
         },
+        "subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "Subtitle",
+            "placeholder": ""
+          }
+        },
         "title": {
           "type": "StructuredText",
           "config": {
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading1,heading2,heading3"
-          }
-        },
-        "subtitle": {
-          "type": "Text",
-          "config": {
-            "label": "Subtitle",
-            "placeholder": ""
+            "multi": "heading2,heading3,heading4"
           }
         },
         "description": {
@@ -56,15 +145,7 @@
             "label": "Description",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
-        },
-        "image": {
-          "type": "Image",
-          "config": {
-            "label": "Image",
-            "constraint": {},
-            "thumbnails": []
+            "multi": "paragraph,preformatted,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
         "button": {
@@ -76,6 +157,33 @@
             "allowTargetBlank": true,
             "allowText": true,
             "repeat": true
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "video": {
+          "type": "Embed",
+          "config": {
+            "label": "Video",
+            "placeholder": ""
+          }
+        },
+        "imageFit": {
+          "type": "Select",
+          "config": {
+            "label": "Image Fit",
+            "placeholder": "",
+            "options": [
+              "contain",
+              "cover"
+            ],
+            "default_value": "contain"
           }
         }
       },
