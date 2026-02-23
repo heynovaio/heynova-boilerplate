@@ -21,6 +21,14 @@
           "placeholder": ""
         }
       },
+      "favicon": {
+        "type": "Image",
+        "config": {
+          "label": "Favicon",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "address": {
         "type": "Text",
         "config": {

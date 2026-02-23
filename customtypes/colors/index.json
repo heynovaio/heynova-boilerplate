@@ -1,11 +1,40 @@
 {
   "format": "custom",
   "id": "colors",
-  "label": "Colors",
+  "label": "Theme",
   "repeatable": false,
   "status": true,
   "json": {
-    "Main": {
+    "Brand Settings": {
+      "base_contrast_mode": {
+        "type": "Boolean",
+        "config": {
+          "label": "Base Contrast Mode",
+          "placeholder_false": "Light",
+          "placeholder_true": "Dark",
+          "default_value": false
+        }
+      },
+      "radius_scale": {
+        "type": "Select",
+        "config": {
+          "label": "Radius Scale",
+          "placeholder": "",
+          "options": ["Sharp", "Soft", "Pill"],
+          "default_value": "Sharp"
+        }
+      },
+      "shadow_style": {
+        "type": "Select",
+        "config": {
+          "label": "Shadow Style",
+          "placeholder": "",
+          "options": ["Flat", "Crisp", "Floaty"],
+          "default_value": "Flat"
+        }
+      }
+    },
+    "Brand Colors": {
       "primary": {
         "type": "Color",
         "config": {
@@ -14,16 +43,58 @@
         }
       },
       "secondary": {
-        "type": "Text",
+        "type": "Color",
         "config": {
           "label": "Secondary",
+          "placeholder": ""
+        }
+      },
+      "tertiary": {
+        "type": "Color",
+        "config": {
+          "label": "Highlight",
           "placeholder": ""
         }
       },
       "accent": {
         "type": "Color",
         "config": {
-          "label": "Accent",
+          "label": "Complimentary",
+          "placeholder": ""
+        }
+      },
+      "black": {
+        "type": "Color",
+        "config": {
+          "label": "Black",
+          "placeholder": ""
+        }
+      },
+      "white": {
+        "type": "Color",
+        "config": {
+          "label": "White",
+          "placeholder": ""
+        }
+      },
+      "hyperlink": {
+        "type": "Color",
+        "config": {
+          "label": "Hyperlink",
+          "placeholder": ""
+        }
+      },
+      "hover": {
+        "type": "Color",
+        "config": {
+          "label": "Hover",
+          "placeholder": ""
+        }
+      },
+      "focus": {
+        "type": "Color",
+        "config": {
+          "label": "Focus",
           "placeholder": ""
         }
       }

@@ -196,45 +196,145 @@ export type BlogHubDocument<Lang extends string = string> =
   >;
 
 /**
- * Content for Colors documents
+ * Content for Theme documents
  */
 interface ColorsDocumentData {
   /**
-   * Primary field in *Colors*
+   * Base Contrast Mode field in *Theme*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: colors.base_contrast_mode
+   * - **Tab**: Brand Settings
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  base_contrast_mode: prismic.BooleanField;
+
+  /**
+   * Radius Scale field in *Theme*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Sharp
+   * - **API ID Path**: colors.radius_scale
+   * - **Tab**: Brand Settings
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  radius_scale: prismic.SelectField<"Sharp" | "Soft" | "Pill", "filled">;
+
+  /**
+   * Shadow Style field in *Theme*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Flat
+   * - **API ID Path**: colors.shadow_style
+   * - **Tab**: Brand Settings
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  shadow_style: prismic.SelectField<"Flat" | "Crisp" | "Floaty", "filled">; /**
+   * Primary field in *Theme*
    *
    * - **Field Type**: Color
    * - **Placeholder**: *None*
    * - **API ID Path**: colors.primary
-   * - **Tab**: Main
+   * - **Tab**: Brand Colors
    * - **Documentation**: https://prismic.io/docs/fields/color
    */
   primary: prismic.ColorField;
 
   /**
-   * Secondary field in *Colors*
+   * Secondary field in *Theme*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Color
    * - **Placeholder**: *None*
    * - **API ID Path**: colors.secondary
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/fields/text
+   * - **Tab**: Brand Colors
+   * - **Documentation**: https://prismic.io/docs/fields/color
    */
-  secondary: prismic.KeyTextField;
+  secondary: prismic.ColorField;
 
   /**
-   * Accent field in *Colors*
+   * Highlight field in *Theme*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: colors.tertiary
+   * - **Tab**: Brand Colors
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  tertiary: prismic.ColorField;
+
+  /**
+   * Complimentary field in *Theme*
    *
    * - **Field Type**: Color
    * - **Placeholder**: *None*
    * - **API ID Path**: colors.accent
-   * - **Tab**: Main
+   * - **Tab**: Brand Colors
    * - **Documentation**: https://prismic.io/docs/fields/color
    */
   accent: prismic.ColorField;
+
+  /**
+   * Black field in *Theme*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: colors.black
+   * - **Tab**: Brand Colors
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  black: prismic.ColorField;
+
+  /**
+   * White field in *Theme*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: colors.white
+   * - **Tab**: Brand Colors
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  white: prismic.ColorField;
+
+  /**
+   * Hyperlink field in *Theme*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: colors.hyperlink
+   * - **Tab**: Brand Colors
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  hyperlink: prismic.ColorField;
+
+  /**
+   * Hover field in *Theme*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: colors.hover
+   * - **Tab**: Brand Colors
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  hover: prismic.ColorField;
+
+  /**
+   * Focus field in *Theme*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: colors.focus
+   * - **Tab**: Brand Colors
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  focus: prismic.ColorField;
 }
 
 /**
- * Colors document from Prismic
+ * Theme document from Prismic
  *
  * - **API ID**: `colors`
  * - **Repeatable**: `false`
@@ -411,6 +511,17 @@ interface GlobalDocumentData {
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   site_title: prismic.KeyTextField;
+
+  /**
+   * Favicon field in *Global*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: global.favicon
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  favicon: prismic.ImageField<never>;
 
   /**
    * Address field in *Global*
