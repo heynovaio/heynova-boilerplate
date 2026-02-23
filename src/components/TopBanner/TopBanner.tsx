@@ -15,7 +15,7 @@ export const TopBanner: React.FC<TopBannerProps> = ({
   locales,
 }) => {
   return (
-    <div className="top-banner flex items-center justify-center text-center md:justify-between p-3 lg:px-14 px-5">
+    <div className="top-banner flex items-center justify-center text-center md:justify-between p-3 lg:px-14 px-5 pr-0 pb-0">
       <div className="md:block hidden"></div>
       <PrismicRichText
         field={banner_text}

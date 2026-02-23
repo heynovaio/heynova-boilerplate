@@ -26,7 +26,7 @@ const MenuPanel = ({ slice }: MenuPanelProps): JSX.Element => {
   const numColumns3 = slice.primary.columns === true;
 
   return (
-    <>
+    <div className="menu-link menu-panel">
       <Popover
         data-slice-type={slice.slice_type}
         data-slice-variation={slice.variation}
@@ -35,7 +35,7 @@ const MenuPanel = ({ slice }: MenuPanelProps): JSX.Element => {
       >
         {({ open }) => (
           <>
-            <PopoverButton className="flex items-center w-full gap-2 rounded-full text-nowrap lg:justify-center no-underline p-4 text-left relative after:content-[''] after:absolute after:bottom-3 after:left-1/2 after:right-1/2 after:h-[2px] after:bg-current after:transition-all after:duration-300 after:ease-in-out hover:after:left-5 hover:after:right-5 menu-panel-hover">
+            <PopoverButton className="flex items-center w-full gap-2 rounded-full text-nowrap lg:justify-center no-underline p-4 text-left">
               {slice.primary.menu_display || "Dropdown"}
               <FaChevronDown
                 className={`h-3 w-3 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
@@ -175,7 +175,7 @@ const MenuPanel = ({ slice }: MenuPanelProps): JSX.Element => {
           </>
         )}
       </Disclosure>
-    </>
+    </div>
   );
 };
 

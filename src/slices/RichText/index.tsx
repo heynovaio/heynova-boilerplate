@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { Section, Container } from "@/components";
 
 /**
  * Props for `RichText`.
@@ -12,18 +13,17 @@ export type RichTextProps = SliceComponentProps<Content.RichTextSlice>;
  */
 const RichText: FC<RichTextProps> = ({ slice }) => {
   return (
-    <section
+    <Section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      styling={`bg-background-${slice.primary.background ? slice.primary.background.toLocaleLowerCase() : "bg-background-none"}`}
     >
-      Placeholder component for rich_text (variation: {slice.variation}) slices.
-      <br />
-      <strong>You can edit this slice directly in your code editor.</strong>
-      {/**
-       * 💡 Use the Prismic MCP server with your code editor
-       * 📚 Docs: https://prismic.io/docs/ai#code-with-prismics-mcp-server
-       */}
-    </section>
+      <Container>
+        <div className={`text-content max-w-225 mx-auto`}>
+          <PrismicRichText field={slice.primary.body} />
+        </div>
+      </Container>
+    </Section>
   );
 };
 

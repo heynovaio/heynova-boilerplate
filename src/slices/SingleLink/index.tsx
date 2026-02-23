@@ -20,11 +20,11 @@ const SingleLink = ({ slice }: SingleLinkProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       data-test-id={slice.slice_type}
-      className="flex w-full"
+      className="flex w-full menu-link single-links"
     >
       <PrismicNextLink
         field={slice.primary.link}
-        className="text-[1.75rem] xs:text-[1.75rem] sm:text-[1.75rem] md:text-[1.25rem] [[data-menu=hamburger]_&]:md:text-[1.75rem] flex w-full gap-2 rounded-full text-nowrap justify-between no-underline py-4 px-0 text-left relative after:content-[''] after:absolute after:bottom-3 after:left-1/2 after:right-1/2 after:h-[2px] after:bg-current after:transition-all after:duration-300 after:ease-in-out hover:after:left-5 hover:after:right-5"
+        className="text-[1.75rem] xs:text-[1.75rem] sm:text-[1.75rem] md:text-[1.25rem] in-data-[menu=hamburger]:md:text-[1.75rem] flex w-full gap-2 rounded-full text-nowrap justify-between no-underline py-4 px-0 text-left"
       >
         <div className="w-3 h-3"></div>
         {slice.primary.icon && (

@@ -1,6 +1,13 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import {
+  Container,
+  ContentBox,
+  Section,
+  VerticalAccordion,
+} from "@/components";
+import { PrismicNextLink } from "@prismicio/next";
 
 /**
  * Props for `Accordion`.
@@ -11,19 +18,41 @@ export type AccordionProps = SliceComponentProps<Content.AccordionSlice>;
  * Component for "Accordion" Slices.
  */
 const Accordion: FC<AccordionProps> = ({ slice }) => {
+  if (!slice.primary.accordion) {
+    return null;
+  }
+
   return (
-    <section
+    <Section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      styling={`bg-background-${slice.primary.background ? slice.primary.background.toLocaleLowerCase() : "bg-background-none"}`}
     >
-      Placeholder component for accordion (variation: {slice.variation}) slices.
-      <br />
-      <strong>You can edit this slice directly in your code editor.</strong>
-      {/**
-       * 💡 Use the Prismic MCP server with your code editor
-       * 📚 Docs: https://prismic.io/docs/ai#code-with-prismics-mcp-server
-       */}
-    </section>
+      <Container>
+        <ContentBox
+          tagline={slice.primary.subtitle || ""}
+          title={slice.primary.title}
+          content={<PrismicRichText field={slice.primary.description} />}
+          buttons={slice.primary.button.map((item, index) => {
+            return (
+              <PrismicNextLink
+                field={item}
+                key={index}
+                className={index === 0 ? "btn btn-primary" : "btn btn-secondary"}
+              />
+            );
+          })}
+        />
+        {slice.primary.accordion.map((item, index) => (
+          <VerticalAccordion
+            title={item.title}
+            content={item.description}
+            key={index}
+            boldTitle={true}
+          />
+        ))}
+      </Container>
+    </Section>
   );
 };
 

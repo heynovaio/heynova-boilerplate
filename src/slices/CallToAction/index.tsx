@@ -1,6 +1,8 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { Container, ContentBox, Section } from "@/components";
+import { PrismicNextLink } from "@prismicio/next";
 
 /**
  * Props for `CallToAction`.
@@ -12,19 +14,33 @@ export type CallToActionProps = SliceComponentProps<Content.CallToActionSlice>;
  */
 const CallToAction: FC<CallToActionProps> = ({ slice }) => {
   return (
-    <section
+    <Section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      styling={`bg-background-${slice.primary.background.toLocaleLowerCase()}`}
     >
-      Placeholder component for call_to_action (variation: {slice.variation})
-      slices.
-      <br />
-      <strong>You can edit this slice directly in your code editor.</strong>
-      {/**
-       * 💡 Use the Prismic MCP server with your code editor
-       * 📚 Docs: https://prismic.io/docs/ai#code-with-prismics-mcp-server
-       */}
-    </section>
+      <Container>
+        <Section styling="cta rounded-4xl">
+          <ContentBox
+            title={slice.primary.title}
+            content={<PrismicRichText field={slice.primary.body} />}
+            buttons={slice.primary.buttons.map((button, index) => (
+              <PrismicNextLink
+                key={button.key}
+                field={button}
+                className={
+                  index === 0 ? "btn btn-primary" : "btn btn-secondary"
+                }
+              >
+                {button.text}
+              </PrismicNextLink>
+            ))}
+            width="narrow"
+            className="flex flex-col justify-center gap-2 sm:w-2/3 mx-auto px-4 sm:px-0"
+          />
+        </Section>
+      </Container>
+    </Section>
   );
 };
 
