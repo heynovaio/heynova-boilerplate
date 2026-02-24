@@ -169,7 +169,7 @@
 
   a {
     text-decoration: underline;
-    color: var(--color-aqua);
+    color: var(--color-hyperlink);
   }
 
   .btn {
