@@ -260,22 +260,22 @@ interface ColorsDocumentData {
    *
    * - **Field Type**: Color
    * - **Placeholder**: *None*
-   * - **API ID Path**: colors.tertiary
+   * - **API ID Path**: colors.highlight
    * - **Tab**: Brand Colors
    * - **Documentation**: https://prismic.io/docs/fields/color
    */
-  tertiary: prismic.ColorField;
+  highlight: prismic.ColorField;
 
   /**
    * Complimentary field in *Theme*
    *
    * - **Field Type**: Color
    * - **Placeholder**: *None*
-   * - **API ID Path**: colors.accent
+   * - **API ID Path**: colors.complimentary
    * - **Tab**: Brand Colors
    * - **Documentation**: https://prismic.io/docs/fields/color
    */
-  accent: prismic.ColorField;
+  complimentary: prismic.ColorField;
 
   /**
    * Black field in *Theme*
@@ -330,7 +330,42 @@ interface ColorsDocumentData {
    * - **Tab**: Brand Colors
    * - **Documentation**: https://prismic.io/docs/fields/color
    */
-  focus: prismic.ColorField;
+  focus: prismic.ColorField; /**
+   * Type Preset field in *Theme*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Modern
+   * - **API ID Path**: colors.type_preset
+   * - **Tab**: Typography
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  type_preset: prismic.SelectField<
+    "Modern" | "Editorial" | "Classic",
+    "filled"
+  >;
+
+  /**
+   * Title Font field in *Theme*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: colors.title_font
+   * - **Tab**: Typography
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title_font: prismic.RichTextField;
+
+  /**
+   * Body Font field in *Theme*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: colors.body_font
+   * - **Tab**: Typography
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  body_font: prismic.RichTextField;
 }
 
 /**

@@ -49,14 +49,14 @@
           "placeholder": ""
         }
       },
-      "tertiary": {
+      "highlight": {
         "type": "Color",
         "config": {
           "label": "Highlight",
           "placeholder": ""
         }
       },
-      "accent": {
+      "complimentary": {
         "type": "Color",
         "config": {
           "label": "Complimentary",
@@ -96,6 +96,35 @@
         "config": {
           "label": "Focus",
           "placeholder": ""
+        }
+      }
+    },
+    "Typography": {
+      "type_preset": {
+        "type": "Select",
+        "config": {
+          "label": "Type Preset",
+          "placeholder": "",
+          "options": ["Modern", "Editorial", "Classic"],
+          "default_value": "Modern"
+        }
+      },
+      "title_font": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Title Font",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "body_font": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Body Font",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       }
     }
