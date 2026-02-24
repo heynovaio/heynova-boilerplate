@@ -72,10 +72,13 @@
   );
 
   /* Theme Colours */
-  --color-primary: var(--color-red);
-  --color-secondary: var(--color-purple-drk);
-  --color-tertiary: var(--color-aqua);
-  --color-accent: var(--color-red);
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-highlight: var(--color-highlight);
+  --color-complimentary: var(--color-complimentary);
+  --color-hyperlink: var(--color-hyperlink);
+  --color-hover: var(--color-hover);
+  --color-focus: var(--color-focus);
   --color-background-none: var(--color-midnight);
   --color-background-primary: var(--color-teal-drk);
   --color-background-secondary: var(--color-purple-drk);
