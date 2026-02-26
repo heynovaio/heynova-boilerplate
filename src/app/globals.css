@@ -263,42 +263,42 @@
 @layer components {
   .bg-background-none {
     .accordion {
-      background: rgba(var(--color-opacity-teal), 0.5);
+      background: transparent;
     }
     .cta {
-      background: rgba(var(--color-opacity-teal), 0.5);
+      background: transparent;
     }
 
     .testimonial-content {
-      background: rgba(var(--color-opacity-teal), 0.5);
+      background: transparent;
     }
   }
 
   .bg-background-primary {
     .accordion {
-      background: rgba(var(--color-opacity-midnight), 0.5);
+      background: var(--color-primary);
     }
 
     .cta {
-      background: rgba(var(--color-opacity-midnight), 0.5);
+      background: var(--color-primary);
     }
 
     .testimonial-content {
-      background: rgba(var(--color-opacity-midnight), 0.5);
+      background: var(--color-primary);
     }
   }
 
   .bg-background-secondary {
     .accordion {
-      background: rgba(var(--color-opacity-teal), 0.5);
+      background: var(--color-secondary);
     }
 
     .cta {
-      background: rgba(var(--color-opacity-teal), 0.5);
+      background: var(--color-secondary);
     }
 
     .testimonial-content {
-      background: rgba(var(--color-opacity-teal), 0.5);
+      background: var(--color-secondary);
     }
   }
 
