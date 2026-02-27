@@ -41,7 +41,7 @@ export const StandardCard = ({
   description,
   subtitle,
   image,
-  imageStyle = "contained",
+  imageStyle = "iconCentered",
   textAlignment = "left",
 }: StandardCardProps) => {
   const renderTitle = () => {
@@ -72,10 +72,23 @@ export const StandardCard = ({
 
     if (imageStyle === "contained") {
       return (
-        <div className="w-full flex items-center justify-center">
+        <div className="w-full flex items-center justify-center pb-6">
           <ResponsiveImage
             image={image}
             className="object-contain max-h-64 w-auto"
+          />
+        </div>
+      );
+    }
+
+    if (imageStyle === "iconLeft" || imageStyle === "iconCentered") {
+      return (
+        <div
+          className={`w-full flex items-center ${imageStyle === "iconCentered" ? "justify-center" : "justify-start"} pb-6`}
+        >
+          <ResponsiveImage
+            image={image}
+            className="object-contain max-h-20 w-auto"
           />
         </div>
       );
