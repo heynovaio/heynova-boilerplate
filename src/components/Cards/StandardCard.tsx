@@ -8,6 +8,7 @@ import {
 import { PrismicRichText } from "@prismicio/react";
 import { ResponsiveImage } from "../Image/ResponsiveImage";
 import { PrismicNextLink } from "@prismicio/next";
+import { Button } from "../Buttons/Button";
 
 interface StandardCardProps {
   title: RichTextField | KeyTextField | string;
@@ -24,7 +25,8 @@ interface StandardCardProps {
   borderColorClass?: string;
   cardBgColorClass?: string;
   titleTextClassName?: string;
-  buttonClass?: string;
+  buttonClass?: "primary" | "secondary" | "outline";
+  titleLevel?: "h3" | "h4";
 }
 
 export const StandardCard = ({
@@ -39,7 +41,9 @@ export const StandardCard = ({
   radiusClass = "rounded-[1.25rem]",
   shadowClass = "",
   button,
-  buttonClass = "btn-primary",
+  buttonClass = "primary",
+  titleTextClassName = "",
+  titleLevel = "h3",
 }: StandardCardProps) => {
   const hasImage = isFilled.image(image);
 
@@ -51,12 +55,32 @@ export const StandardCard = ({
 
   const renderTitle = () => {
     if (!title) return null;
-    if (Array.isArray(title)) {
-      return <PrismicRichText field={title} />;
-    }
-    return <h3>{title}</h3>;
-  };
 
+    if (Array.isArray(title)) {
+      return (
+        <PrismicRichText
+          field={title}
+          components={{
+            heading3: ({ children }) => (
+              <h3 className={`${titleTextClassName} mb-4`}>{children}</h3>
+            ),
+            heading2: ({ children }) => (
+              <h2 className={`${titleTextClassName} mb-4`}>{children}</h2>
+            ),
+            heading4: ({ children }) => (
+              <h4 className={`${titleTextClassName} mb-4`}>{children}</h4>
+            ),
+          }}
+        />
+      );
+    }
+
+    return titleLevel === "h3" ? (
+      <h3 className={`${titleTextClassName} mb-4`}>{title}</h3>
+    ) : (
+      <h4 className={`${titleTextClassName} mb-4`}>{title}</h4>
+    );
+  };
   const renderDescription = () => {
     if (!description) return null;
     if (Array.isArray(description)) {
@@ -111,13 +135,11 @@ export const StandardCard = ({
 
   const renderButton = () => {
     if (!isFilled.link(button)) return null;
+
     return (
-      <PrismicNextLink
-        field={button}
-        className={`mt-4 inline-block btn ${buttonClass} underline`}
-      >
-        {button.text || "Learn more"}
-      </PrismicNextLink>
+      <div className="mt-4">
+        <Button button={button} buttonClass={buttonClass} />
+      </div>
     );
   };
 
