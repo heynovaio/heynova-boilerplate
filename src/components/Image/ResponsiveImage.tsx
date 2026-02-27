@@ -2,10 +2,9 @@ import { ImageField, isFilled } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextImageProps } from "@prismicio/next";
 import clsx from "clsx";
 
-interface PrismicImageProps extends PrismicNextImageProps {
+interface PrismicImageProps extends Omit<PrismicNextImageProps, "field"> {
   image?: ImageField;
   containerClassName?: string;
-  className?: string;
   imageHeightClassName?: string;
 }
 
