@@ -16,11 +16,13 @@ interface StandardCardProps {
   button?: LinkField;
   image?: ImageField;
 
-  titleTextClassName?: string;
-
   textAlignment?: "left" | "center" | "right";
   imageStyle?: "fullWidth" | "contained" | "iconCentered" | "iconLeft";
   radiusStyle?: "Sharp" | "Soft" | "Pill";
+
+  borderColorClass?: string;
+  cardBgColorClass?: string;
+  titleTextClassName?: string;
 }
 
 // TODO: figure out should i pull  radius style and shadow from global here *******
@@ -28,10 +30,9 @@ interface StandardCardProps {
 {
   /**
     TODO:
-    - set up image and all the image styles
-    - do the text alignments
+
     - set up color props or double check in channel if itll be pulled from somwhere directly
-    -  
+    - add buttons
     
     */
 }
@@ -41,9 +42,17 @@ export const StandardCard = ({
   description,
   subtitle,
   image,
-  imageStyle = "iconCentered",
+  imageStyle = "contained",
   textAlignment = "left",
 }: StandardCardProps) => {
+  const hasImage = isFilled.image(image);
+
+  const alignmentClass = {
+    left: "text-left items-start",
+    center: "text-center items-center",
+    right: "text-right items-end",
+  }[textAlignment];
+
   const renderTitle = () => {
     if (!title) return null;
     if (Array.isArray(title)) {
@@ -105,11 +114,23 @@ export const StandardCard = ({
   };
 
   return (
-    <div className="border border-white p-6 w-full rounded overflow-hidden h-full">
-      {renderImage()}
-      <div>{renderSubtitle()}</div>
-      <div>{renderTitle()}</div>
-      <div>{renderDescription()}</div>
+    <div className="border border-white p-6 w-full rounded overflow-hidden h-full flex flex-col">
+      {hasImage && renderImage()}
+
+      <div
+        className={`
+        flex flex-col w-full
+        ${
+          !hasImage
+            ? "flex-1 justify-center items-center text-center"
+            : alignmentClass
+        }
+      `}
+      >
+        {renderSubtitle()}
+        {renderTitle()}
+        {renderDescription()}
+      </div>
     </div>
   );
 };
