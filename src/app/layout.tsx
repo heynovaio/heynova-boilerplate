@@ -44,6 +44,9 @@ export default async function RootLayout({
             "--color-hyperlink": hyperlink,
             "--color-hover": hover,
             "--color-focus": focus,
+            "--radius-scale": radius_scale,
+            "--shadow-style": shadow_style,
+            "--base-contrast-mode": base_constrast_mode,
           } as React.CSSProperties
         }
       >
