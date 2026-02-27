@@ -7,7 +7,7 @@ import {
 } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
 import { ResponsiveImage } from "../Image/ResponsiveImage";
-import { IoPersonOutline } from "react-icons/io5";
+import { PrismicNextLink } from "@prismicio/next";
 
 interface StandardCardProps {
   title: RichTextField | KeyTextField | string;
@@ -24,16 +24,14 @@ interface StandardCardProps {
   borderColorClass?: string;
   cardBgColorClass?: string;
   titleTextClassName?: string;
+  buttonClass?: string;
 }
 
 // TODO: figure out should i pull  radius style and shadow from global here *******
 
 {
   /**
-    TODO:
-
-    - add buttons
-    
+    TODO: 
     */
 }
 
@@ -48,6 +46,8 @@ export const StandardCard = ({
   cardBgColorClass = "",
   radiusClass = "rounded-[1.25rem]",
   shadowClass = "",
+  button,
+  buttonClass = "btn-secondary",
 }: StandardCardProps) => {
   const hasImage = isFilled.image(image);
 
@@ -117,6 +117,18 @@ export const StandardCard = ({
     );
   };
 
+  const renderButton = () => {
+    if (!isFilled.link(button)) return null;
+    return (
+      <PrismicNextLink
+        field={button}
+        className={`mt-4 inline-block btn ${buttonClass} underline`}
+      >
+        {button.text || "Learn more"}
+      </PrismicNextLink>
+    );
+  };
+
   return (
     <div
       className={`border ${borderColorClass} ${cardBgColorClass} ${radiusClass} ${shadowClass} p-6 w-full overflow-hidden h-full flex flex-col`}
@@ -136,6 +148,7 @@ export const StandardCard = ({
         {renderSubtitle()}
         {renderTitle()}
         {renderDescription()}
+        {renderButton()}
       </div>
     </div>
   );
