@@ -72,6 +72,8 @@
   );
 
   /* Theme Colours */
+
+  /** Leave this if they help but if no remove them - karlee */
   --color-primary: var(--color-primary);
   --color-secondary: var(--color-secondary);
   --color-highlight: var(--color-highlight);
@@ -79,6 +81,7 @@
   --color-hyperlink: var(--color-hyperlink);
   --color-hover: var(--color-hover);
   --color-focus: var(--color-focus);
+
   --color-background-none: var(--color-midnight);
   --color-background-primary: var(--color-teal-drk);
   --color-background-secondary: var(--color-purple-drk);
