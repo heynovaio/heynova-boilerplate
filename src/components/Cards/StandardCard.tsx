@@ -27,14 +27,6 @@ interface StandardCardProps {
   buttonClass?: string;
 }
 
-// TODO: figure out should i pull  radius style and shadow from global here *******
-
-{
-  /**
-    TODO: 
-    */
-}
-
 export const StandardCard = ({
   title,
   description,
@@ -47,7 +39,7 @@ export const StandardCard = ({
   radiusClass = "rounded-[1.25rem]",
   shadowClass = "",
   button,
-  buttonClass = "btn-secondary",
+  buttonClass = "btn-primary",
 }: StandardCardProps) => {
   const hasImage = isFilled.image(image);
 
