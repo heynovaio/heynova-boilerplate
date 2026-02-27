@@ -18,7 +18,8 @@ interface StandardCardProps {
 
   textAlignment?: "left" | "center" | "right";
   imageStyle?: "fullWidth" | "contained" | "iconCentered" | "iconLeft";
-  radiusStyle?: "Sharp" | "Soft" | "Pill";
+  radiusClass?: string;
+  shadowClass?: string;
 
   borderColorClass?: string;
   cardBgColorClass?: string;
@@ -31,7 +32,6 @@ interface StandardCardProps {
   /**
     TODO:
 
-    - set up color props or double check in channel if itll be pulled from somwhere directly
     - add buttons
     
     */
@@ -44,6 +44,10 @@ export const StandardCard = ({
   image,
   imageStyle = "contained",
   textAlignment = "left",
+  borderColorClass = "border-white",
+  cardBgColorClass = "",
+  radiusClass = "rounded-[1.25rem]",
+  shadowClass = "",
 }: StandardCardProps) => {
   const hasImage = isFilled.image(image);
 
@@ -114,7 +118,9 @@ export const StandardCard = ({
   };
 
   return (
-    <div className="border border-white p-6 w-full rounded overflow-hidden h-full flex flex-col">
+    <div
+      className={`border ${borderColorClass} ${cardBgColorClass} ${radiusClass} ${shadowClass} p-6 w-full overflow-hidden h-full flex flex-col`}
+    >
       {hasImage && renderImage()}
 
       <div
