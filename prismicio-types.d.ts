@@ -839,6 +839,7 @@ export type NewsletterDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | HorizontalAccordionSlice
   | CarouselSlice
   | SimpleTextSlice
   | NumberedListSlice
@@ -1654,6 +1655,144 @@ type CarouselSliceVariation = CarouselSliceDefault;
 export type CarouselSlice = prismic.SharedSlice<
   "carousel",
   CarouselSliceVariation
+>;
+
+/**
+ * Item in *HorizontalAccordion → Default → Primary → Accordion*
+ */
+export interface HorizontalAccordionSliceDefaultPrimaryAccordionItem {
+  /**
+   * Icon field in *HorizontalAccordion → Default → Primary → Accordion*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: horizontal_accordion.default.primary.accordion[].icon
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  icon: prismic.ImageField<never>;
+
+  /**
+   * TItle field in *HorizontalAccordion → Default → Primary → Accordion*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: horizontal_accordion.default.primary.accordion[].title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Body field in *HorizontalAccordion → Default → Primary → Accordion*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: horizontal_accordion.default.primary.accordion[].body
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * Button field in *HorizontalAccordion → Default → Primary → Accordion*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: horizontal_accordion.default.primary.accordion[].button
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  button: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
+ * Primary content in *HorizontalAccordion → Default → Primary*
+ */
+export interface HorizontalAccordionSliceDefaultPrimary {
+  /**
+   * Background Color field in *HorizontalAccordion → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Default
+   * - **API ID Path**: horizontal_accordion.default.primary.background_color
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  background_color: prismic.SelectField<
+    "Default" | "Complimentary" | "Inverted" | "None",
+    "filled"
+  >;
+
+  /**
+   * Title field in *HorizontalAccordion → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: horizontal_accordion.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Body field in *HorizontalAccordion → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: horizontal_accordion.default.primary.body
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * Buttons field in *HorizontalAccordion → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: horizontal_accordion.default.primary.buttons
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  buttons: prismic.Repeatable<
+    prismic.LinkField<string, string, unknown, prismic.FieldState, never>
+  >;
+
+  /**
+   * Accordion field in *HorizontalAccordion → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: horizontal_accordion.default.primary.accordion[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  accordion: prismic.GroupField<
+    Simplify<HorizontalAccordionSliceDefaultPrimaryAccordionItem>
+  >;
+}
+
+/**
+ * Default variation for HorizontalAccordion Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type HorizontalAccordionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HorizontalAccordionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *HorizontalAccordion*
+ */
+type HorizontalAccordionSliceVariation = HorizontalAccordionSliceDefault;
+
+/**
+ * HorizontalAccordion Shared Slice
+ *
+ * - **API ID**: `horizontal_accordion`
+ * - **Description**: HorizontalAccordion
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type HorizontalAccordionSlice = prismic.SharedSlice<
+  "horizontal_accordion",
+  HorizontalAccordionSliceVariation
 >;
 
 /**
@@ -2937,6 +3076,11 @@ declare module "@prismicio/client" {
       CarouselSlice,
       CarouselSliceVariation,
       CarouselSliceDefault,
+      HorizontalAccordionSlice,
+      HorizontalAccordionSliceDefaultPrimaryAccordionItem,
+      HorizontalAccordionSliceDefaultPrimary,
+      HorizontalAccordionSliceVariation,
+      HorizontalAccordionSliceDefault,
       ImageTextSlice,
       ImageTextSliceDefaultPrimary,
       ImageTextSliceVideoPrimary,
