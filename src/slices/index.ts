@@ -6,6 +6,7 @@ export const components = {
   accordion: dynamic(() => import("./Accordion")),
   call_to_action: dynamic(() => import("./CallToAction")),
   carousel: dynamic(() => import("./Carousel")),
+  horizontal_accordion: dynamic(() => import("./HorizontalAccordion")),
   image_text: dynamic(() => import("./ImageText")),
   logo_list: dynamic(() => import("./LogoList")),
   map: dynamic(() => import("./Map")),
