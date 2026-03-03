@@ -395,16 +395,19 @@ type ContactDocumentDataSlicesSlice =
  */
 interface ContactDocumentData {
   /**
-   * Background Color field in *Contact*
+   * Background field in *Contact*
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
-   * - **Default Value**: None
-   * - **API ID Path**: contact.background_color
+   * - **Default Value**: Default
+   * - **API ID Path**: contact.background
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/fields/select
    */
-  background_color: prismic.SelectField<"None" | "Light" | "Dark", "filled">;
+  background: prismic.SelectField<
+    "Default" | "Complementary" | "Inverted",
+    "filled"
+  >;
 
   /**
    * Tagline field in *Contact*
@@ -440,15 +443,15 @@ interface ContactDocumentData {
   body: prismic.RichTextField;
 
   /**
-   * Buttons field in *Contact*
+   * Button field in *Contact*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: contact.buttons
+   * - **API ID Path**: contact.button
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/fields/link
    */
-  buttons: prismic.Repeatable<
+  button: prismic.Repeatable<
     prismic.LinkField<string, string, unknown, prismic.FieldState, never>
   >;
 
@@ -856,27 +859,19 @@ type PageDocumentDataSlicesSlice =
  */
 interface PageDocumentData {
   /**
-   * Background Color field in *Page*
+   * Background field in *Page*
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
-   * - **Default Value**: White
-   * - **API ID Path**: page.background_color
+   * - **Default Value**: Default
+   * - **API ID Path**: page.background
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/fields/select
    */
-  background_color: prismic.SelectField<"White" | "Light" | "Dark", "filled">;
-
-  /**
-   * Category field in *Page*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: page.category
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/fields/content-relationship
-   */
-  category: prismic.ContentRelationshipField<"resource_category">;
+  background: prismic.SelectField<
+    "Default" | "Complementary" | "Inverted",
+    "filled"
+  >;
 
   /**
    * Title field in *Page*
@@ -1066,12 +1061,15 @@ interface TeamDocumentData {
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
-   * - **Default Value**: None
-   * - **API ID Path**: team.background_color
+   * - **Default Value**: Default
+   * - **API ID Path**: team.background
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/fields/select
    */
-  background_color: prismic.SelectField<"None" | "Light" | "Dark", "filled">;
+  background: prismic.SelectField<
+    "Default" | "Complementary" | "Inverted",
+    "filled"
+  >;
 
   /**
    * Tagline field in *Team*
@@ -1107,15 +1105,15 @@ interface TeamDocumentData {
   body: prismic.RichTextField;
 
   /**
-   * Buttons field in *Team*
+   * Button field in *Team*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: team.buttons
+   * - **API ID Path**: team.button
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/fields/link
    */
-  buttons: prismic.Repeatable<
+  button: prismic.Repeatable<
     prismic.LinkField<string, string, unknown, prismic.FieldState, never>
   >;
 
