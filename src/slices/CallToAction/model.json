@@ -18,11 +18,104 @@
             "label": "Background",
             "placeholder": "",
             "options": [
-              "None",
-              "Primary",
-              "Secondary"
+              "Default",
+              "Complementary",
+              "Inverted"
             ],
-            "default_value": "None"
+            "default_value": "Default"
+          }
+        },
+        "card_style": {
+          "type": "Select",
+          "config": {
+            "label": "Card Style",
+            "placeholder": "",
+            "options": [
+              "Default",
+              "Inverted"
+            ],
+            "default_value": "Default"
+          }
+        },
+        "subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "Subtitle",
+            "placeholder": ""
+          }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "heading1,heading2,heading3"
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Body",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "buttons": {
+          "type": "Link",
+          "config": {
+            "label": "Buttons",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": true
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "ctaWithBackgroundImage",
+      "name": "CTA - With Background Image",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "background": {
+          "type": "Select",
+          "config": {
+            "label": "Background Overlay",
+            "placeholder": "",
+            "options": [
+              "Default",
+              "Complementary",
+              "Inverted",
+              "None"
+            ],
+            "default_value": "Default"
+          }
+        },
+        "card_style": {
+          "type": "Select",
+          "config": {
+            "label": "Card Style",
+            "placeholder": "",
+            "options": [
+              "Default",
+              "Inverted"
+            ],
+            "default_value": "Default"
+          }
+        },
+        "background_image": {
+          "type": "Image",
+          "config": {
+            "label": "Background Image",
+            "constraint": {},
+            "thumbnails": []
           }
         },
         "subtitle": {

@@ -18,10 +18,11 @@
             "label": "Background",
             "placeholder": "",
             "options": [
-              "None",
+              "Default",
               "Primary",
               "Secondary"
-            ]
+            ],
+            "default_value": "Default"
           }
         },
         "title": {

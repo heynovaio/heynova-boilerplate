@@ -20,7 +20,9 @@ const CallToAction: FC<CallToActionProps> = ({ slice }) => {
       styling={`bg-background-${slice.primary.background.toLocaleLowerCase()}`}
     >
       <Container>
-        <Section styling="cta rounded-4xl">
+        <Section
+          styling={`bg-background-${slice.primary.card_style} cta rounded-4xl`}
+        >
           <ContentBox
             title={slice.primary.title}
             content={<PrismicRichText field={slice.primary.body} />}

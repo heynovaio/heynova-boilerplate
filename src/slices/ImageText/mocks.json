@@ -5,7 +5,7 @@
 		"primary": {
 			"background_color": {
 				"__TYPE__": "FieldContent",
-				"value": "None",
+				"value": "Default",
 				"type": "Select"
 			},
 			"title": {
@@ -86,7 +86,7 @@
 		"primary": {
 			"background_color": {
 				"__TYPE__": "FieldContent",
-				"value": "None",
+				"value": "Inverted",
 				"type": "Select"
 			},
 			"title": {

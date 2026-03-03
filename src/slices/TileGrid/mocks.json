@@ -5,7 +5,7 @@
 		"primary": {
 			"background": {
 				"__TYPE__": "FieldContent",
-				"value": "Secondary",
+				"value": "Inverted",
 				"type": "Select"
 			},
 			"subtitle": {
@@ -118,8 +118,8 @@
 							[
 								"button",
 								{
-									"__TYPE__": "LinkContent",
 									"key": "2b7b7e88-658b-48e7-a424-174a25733dcf",
+									"__TYPE__": "LinkContent",
 									"value": {
 										"__TYPE__": "ExternalLink",
 										"url": "http://google.com",

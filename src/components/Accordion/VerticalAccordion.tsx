@@ -18,6 +18,7 @@ interface VerticalAccordionProps {
   textColorClass?: string;
   button?: ReactNode;
   boldTitle?: boolean;
+  background?: string;
 }
 
 export const VerticalAccordion: React.FC<VerticalAccordionProps> = ({
@@ -26,10 +27,11 @@ export const VerticalAccordion: React.FC<VerticalAccordionProps> = ({
   image,
   button,
   boldTitle = true,
+  background = "default",
 }) => {
   return (
     <section
-      className={`w-full accordion font-primary my-4 rounded-[5px] accordion-content antialiased`}
+      className={`bg-background-${background} w-full accordion font-primary my-4 rounded-[5px] accordion-content antialiased`}
     >
       <Disclosure>
         {({ open }) => (

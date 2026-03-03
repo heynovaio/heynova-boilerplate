@@ -47,7 +47,7 @@ const Testimonial: FC<TestimonialProps> = ({ slice }) => {
     <Section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      styling={`bg-background-${slice.primary.background ? slice.primary.background.toLocaleLowerCase() : "bg-background-none"}`}
+      styling={`bg-background-${slice.primary.background ? slice.primary.background.toLocaleLowerCase() : "default"}`}
     >
       <Container containerClassName="flex flex-col gap-12 items-center">
         <div className="testimonial-content relative rounded-[1.25rem] py-4 px-6 md:py-16 md:px-28 overflow-hidden">
