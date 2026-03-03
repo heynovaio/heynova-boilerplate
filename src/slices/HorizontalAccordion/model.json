@@ -100,6 +100,17 @@
               }
             }
           }
+        },
+        "card_color": {
+          "type": "Select",
+          "config": {
+            "label": "Card Color",
+            "placeholder": "",
+            "options": [
+              "Default",
+              "Inverted"
+            ]
+          }
         }
       },
       "items": {}
