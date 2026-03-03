@@ -1763,6 +1763,16 @@ export interface HorizontalAccordionSliceDefaultPrimary {
   accordion: prismic.GroupField<
     Simplify<HorizontalAccordionSliceDefaultPrimaryAccordionItem>
   >;
+
+  /**
+   * Card Color field in *HorizontalAccordion → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: horizontal_accordion.default.primary.card_color
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  card_color: prismic.SelectField<"Default" | "Inverted">;
 }
 
 /**

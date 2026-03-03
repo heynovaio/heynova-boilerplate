@@ -19,6 +19,8 @@ interface HorizontalAccordionProps {
   contents: RichTextField[];
   images?: ImageField[];
   buttons?: LinkField[];
+  backgroundClass: string;
+  selectedTabClass?: string;
 }
 
 export const HorizontalAccordion: React.FC<HorizontalAccordionProps> = ({
@@ -26,6 +28,8 @@ export const HorizontalAccordion: React.FC<HorizontalAccordionProps> = ({
   contents,
   images = [],
   buttons = [],
+  backgroundClass,
+  selectedTabClass = "",
 }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   return (
@@ -41,15 +45,13 @@ export const HorizontalAccordion: React.FC<HorizontalAccordionProps> = ({
                     (idx > 0 &&
                       selectedIndex !== idx &&
                       selectedIndex !== idx - 1) ? (
-                      <div className="h-[.5px] bg-gradient-to-r from-[#97e1e5] to-[#d9caf8]" />
+                      <div className="h-[.5px] bg-secondary" />
                     ) : null}
 
                     <Tab
                       className={({ selected }) =>
                         `hover:cursor-pointer w-full px-6 py-10 flex flex-row justify-between items-center font-bold transition-all duration-300 outline-none ${
-                          selected
-                            ? "selected-tab-style"
-                            : "text-gradient-light"
+                          selected ? selectedTabClass : "text-gradient-light"
                         }`
                       }
                     >
@@ -78,7 +80,9 @@ export const HorizontalAccordion: React.FC<HorizontalAccordionProps> = ({
               })}
             </TabList>
 
-            <TabPanels className="w-1/2 p-[2px] rounded-[10px] flex-1 bg-midnight/25 border-aqua/70 border min-h-[400px] glow-blur">
+            <TabPanels
+              className={`w-1/2 p-[2px] rounded-[10px] flex-1 ${backgroundClass} border-aqua/70 border min-h-[400px] glow-blur`}
+            >
               <div className="w-full h-full">
                 {titles.map((_, idx) => (
                   <TabPanel
@@ -183,7 +187,7 @@ export const HorizontalAccordion: React.FC<HorizontalAccordionProps> = ({
                   )}
                 </Tab>
 
-                <TabPanel className="border rounded-[10px] min-h-[400px] gradient-card-bg py-10">
+                <TabPanel className="border rounded-[10px] min-h-[400px]  py-10">
                   <div className="h-full flex items-center justify-center">
                     <div className="text-white text-center px-8 w-full max-w-2xl mx-auto flex flex-col items-center">
                       {images[index]?.url && (
