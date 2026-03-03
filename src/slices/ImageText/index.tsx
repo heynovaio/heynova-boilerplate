@@ -33,7 +33,7 @@ const ImageText = ({ slice }: ImageTextProps): JSX.Element => {
           <PrismicNextLink
             field={link}
             key={index}
-            className="btn btn-primary"
+            className={`btn ${index === 0 ? "btn-primary" : "btn-secondary"}`}
           />
         ) : null,
       )
