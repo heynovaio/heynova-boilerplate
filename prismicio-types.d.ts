@@ -820,6 +820,176 @@ interface MenusDocumentData {
 export type MenusDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<MenusDocumentData>, "menus", Lang>;
 
+/**
+ * Item in *Navigation Rules → Locales*
+ */
+export interface NavigationRulesDocumentDataLocalesItem {
+  /**
+   * Locale field in *Navigation Rules → Locales*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: ex: fr-CA
+   * - **API ID Path**: navigation_rules.locales[].locale
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  locale: prismic.KeyTextField;
+
+  /**
+   * URL Prefix field in *Navigation Rules → Locales*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: ex: fr (blank defaults prismic lang id)
+   * - **API ID Path**: navigation_rules.locales[].url_prefix
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  url_prefix: prismic.KeyTextField;
+
+  /**
+   * Label field in *Navigation Rules → Locales*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: ex: Français
+   * - **API ID Path**: navigation_rules.locales[].label
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * Enabled? field in *Navigation Rules → Locales*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: navigation_rules.locales[].enabled
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  enabled: prismic.BooleanField;
+}
+
+/**
+ * Item in *Navigation Rules → Redirect Rules*
+ */
+export interface NavigationRulesDocumentDataRedirectRulesItem {
+  /**
+   * Locale field in *Navigation Rules → Redirect Rules*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: (Leave blank to apply to all)
+   * - **API ID Path**: navigation_rules.redirect_rules[].locale
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  locale: prismic.KeyTextField;
+
+  /**
+   * From field in *Navigation Rules → Redirect Rules*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: ex: /origin
+   * - **API ID Path**: navigation_rules.redirect_rules[].redirect_from
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  redirect_from: prismic.KeyTextField;
+
+  /**
+   * To field in *Navigation Rules → Redirect Rules*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: ex: /destination
+   * - **API ID Path**: navigation_rules.redirect_rules[].redirect_to
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  redirect_to: prismic.KeyTextField;
+
+  /**
+   * Status field in *Navigation Rules → Redirect Rules*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: 301
+   * - **API ID Path**: navigation_rules.redirect_rules[].status
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  status: prismic.SelectField<"301" | "302" | "404" | "200", "filled">;
+
+  /**
+   * Force? field in *Navigation Rules → Redirect Rules*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: navigation_rules.redirect_rules[].force
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  force: prismic.BooleanField;
+
+  /**
+   * Enabled? field in *Navigation Rules → Redirect Rules*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: navigation_rules.redirect_rules[].enabled
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  enabled: prismic.BooleanField;
+}
+
+/**
+ * Content for Navigation Rules documents
+ */
+interface NavigationRulesDocumentData {
+  /**
+   * Default Locale field in *Navigation Rules*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Url prefix will be blank on this url (i.e example.com/en-ca -> example.com)
+   * - **API ID Path**: navigation_rules.default_locale
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  default_locale: prismic.KeyTextField;
+
+  /**
+   * Locales field in *Navigation Rules*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_rules.locales[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  locales: prismic.GroupField<Simplify<NavigationRulesDocumentDataLocalesItem>>;
+
+  /**
+   * Redirect Rules field in *Navigation Rules*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_rules.redirect_rules[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  redirect_rules: prismic.GroupField<
+    Simplify<NavigationRulesDocumentDataRedirectRulesItem>
+  >;
+}
+
+/**
+ * Navigation Rules document from Prismic
+ *
+ * - **API ID**: `navigation_rules`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NavigationRulesDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<NavigationRulesDocumentData>,
+    "navigation_rules",
+    Lang
+  >;
+
 interface NewsletterDocumentData {}
 
 /**
@@ -1275,6 +1445,7 @@ export type AllDocumentTypes =
   | ContactDocument
   | GlobalDocument
   | MenusDocument
+  | NavigationRulesDocument
   | NewsletterDocument
   | PageDocument
   | ProgramDocument
@@ -2908,6 +3079,10 @@ declare module "@prismicio/client" {
       MenusDocumentDataCallToActionButtonItem,
       MenusDocumentDataSlicesSlice,
       MenusDocumentDataSlices1Slice,
+      NavigationRulesDocument,
+      NavigationRulesDocumentData,
+      NavigationRulesDocumentDataLocalesItem,
+      NavigationRulesDocumentDataRedirectRulesItem,
       NewsletterDocument,
       NewsletterDocumentData,
       PageDocument,

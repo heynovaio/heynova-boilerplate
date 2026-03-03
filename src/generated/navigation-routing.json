@@ -1,0 +1,18 @@
+{
+  "defaultLocale": "en-ca",
+  "locales": [
+    "en-ca",
+    "fr-ca"
+  ],
+  "prefixByLocale": {
+    "en-ca": "",
+    "fr-ca": "fr"
+  },
+  "localeByPrefix": {
+    "fr": "fr-ca"
+  },
+  "labelsByLocale": {
+    "en-ca": "English",
+    "fr-ca": "Français"
+  }
+}
