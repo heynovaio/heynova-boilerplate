@@ -6,13 +6,13 @@
   "status": true,
   "json": {
     "Main": {
-      "background_color": {
+      "background": {
         "type": "Select",
         "config": {
-          "label": "Background Color",
+          "label": "Background",
           "placeholder": "",
-          "options": ["None", "Light", "Dark"],
-          "default_value": "None"
+          "options": ["Default", "Complementary", "Inverted"],
+          "default_value": "Default"
         }
       },
       "tagline": {
@@ -40,10 +40,10 @@
           "multi": "preformatted,paragraph,hyperlink,image,embed,list-item,o-list-item,rtl,strong,em"
         }
       },
-      "buttons": {
+      "button": {
         "type": "Link",
         "config": {
-          "label": "Buttons",
+          "label": "Button",
           "placeholder": "",
           "select": null,
           "allowTargetBlank": true,

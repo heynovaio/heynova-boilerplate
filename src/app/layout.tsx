@@ -4,6 +4,7 @@ import { repositoryName, createClient } from "@/prismicio";
 import "./globals.css";
 import React from "react";
 import ReactQueryProvider from "@/providers/ReactQueryProvider";
+import { hexToRgba } from "@/utils";
 
 export default async function RootLayout({
   children,
@@ -36,6 +37,7 @@ export default async function RootLayout({
       style={
         {
           "--color-primary": primary,
+          "--color-primary-90": hexToRgba(primary, 0.9),
           "--color-secondary": secondary,
           "--color-highlight": highlight,
           "--color-complementary": complementary,
