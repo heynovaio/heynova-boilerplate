@@ -18,11 +18,11 @@
             "label": "Background Color",
             "placeholder": "",
             "options": [
-              "None",
-              "Primary",
-              "Secondary"
+              "Default",
+              "Complementary",
+              "Inverted"
             ],
-            "default_value": "None"
+            "default_value": "Default"
           }
         },
         "image": {
@@ -107,11 +107,11 @@
             "label": "Background Color",
             "placeholder": "",
             "options": [
-              "None",
-              "Primary",
-              "Secondary"
+              "Default",
+              "Complementary",
+              "Inverted"
             ],
-            "default_value": "None"
+            "default_value": "Default"
           }
         },
         "image_left": {

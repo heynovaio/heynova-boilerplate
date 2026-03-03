@@ -267,15 +267,15 @@ interface ColorsDocumentData {
   highlight: prismic.ColorField;
 
   /**
-   * Complimentary field in *Theme*
+   * Complementary field in *Theme*
    *
    * - **Field Type**: Color
    * - **Placeholder**: *None*
-   * - **API ID Path**: colors.complimentary
+   * - **API ID Path**: colors.complementary
    * - **Tab**: Brand Colors
    * - **Documentation**: https://prismic.io/docs/fields/color
    */
-  complimentary: prismic.ColorField;
+  complementary: prismic.ColorField;
 
   /**
    * Black field in *Theme*
@@ -1374,10 +1374,25 @@ export interface AccordionSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
+   * - **Default Value**: Default
    * - **API ID Path**: accordion.default.primary.background
    * - **Documentation**: https://prismic.io/docs/fields/select
    */
-  background: prismic.SelectField<"None" | "Primary" | "Secondary">;
+  background: prismic.SelectField<
+    "Default" | "Complementary" | "Inverted",
+    "filled"
+  >;
+
+  /**
+   * Card Style field in *Accordion → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Default
+   * - **API ID Path**: accordion.default.primary.card_style
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  card_style: prismic.SelectField<"Default" | "Inverted", "filled">;
 
   /**
    * Subtitle field in *Accordion → Default → Primary*
@@ -1456,10 +1471,25 @@ export interface AccordionSliceHorizontalAccordionPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
+   * - **Default Value**: Default
    * - **API ID Path**: accordion.horizontalAccordion.primary.background
    * - **Documentation**: https://prismic.io/docs/fields/select
    */
-  background: prismic.SelectField<"None" | "Primary" | "Secondary">;
+  background: prismic.SelectField<
+    "Default" | "Complementary" | "Inverted",
+    "filled"
+  >;
+
+  /**
+   * Card Style field in *Accordion → Horizontal Accordion → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Default
+   * - **API ID Path**: accordion.horizontalAccordion.primary.card_style
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  card_style: prismic.SelectField<"Default" | "Inverted", "filled">;
 
   /**
    * Subtitle field in *Accordion → Horizontal Accordion → Primary*
@@ -1557,11 +1587,25 @@ export interface CallToActionSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
-   * - **Default Value**: None
+   * - **Default Value**: Default
    * - **API ID Path**: call_to_action.default.primary.background
    * - **Documentation**: https://prismic.io/docs/fields/select
    */
-  background: prismic.SelectField<"None" | "Primary" | "Secondary", "filled">;
+  background: prismic.SelectField<
+    "Default" | "Complementary" | "Inverted",
+    "filled"
+  >;
+
+  /**
+   * Card Style field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Default
+   * - **API ID Path**: call_to_action.default.primary.card_style
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  card_style: prismic.SelectField<"Default" | "Inverted", "filled">;
 
   /**
    * Subtitle field in *CallToAction → Default → Primary*
@@ -1620,9 +1664,107 @@ export type CallToActionSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *CallToAction → CTA - With Background Image → Primary*
+ */
+export interface CallToActionSliceCtaWithBackgroundImagePrimary {
+  /**
+   * Background Overlay field in *CallToAction → CTA - With Background Image → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Default
+   * - **API ID Path**: call_to_action.ctaWithBackgroundImage.primary.background
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  background: prismic.SelectField<
+    "Default" | "Complementary" | "Inverted" | "None",
+    "filled"
+  >;
+
+  /**
+   * Card Style field in *CallToAction → CTA - With Background Image → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Default
+   * - **API ID Path**: call_to_action.ctaWithBackgroundImage.primary.card_style
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  card_style: prismic.SelectField<"Default" | "Inverted", "filled">;
+
+  /**
+   * Background Image field in *CallToAction → CTA - With Background Image → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.ctaWithBackgroundImage.primary.background_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  background_image: prismic.ImageField<never>;
+
+  /**
+   * Subtitle field in *CallToAction → CTA - With Background Image → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.ctaWithBackgroundImage.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * Title field in *CallToAction → CTA - With Background Image → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.ctaWithBackgroundImage.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Body field in *CallToAction → CTA - With Background Image → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.ctaWithBackgroundImage.primary.body
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * Buttons field in *CallToAction → CTA - With Background Image → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.ctaWithBackgroundImage.primary.buttons
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  buttons: prismic.Repeatable<
+    prismic.LinkField<string, string, unknown, prismic.FieldState, never>
+  >;
+}
+
+/**
+ * CTA - With Background Image variation for CallToAction Slice
+ *
+ * - **API ID**: `ctaWithBackgroundImage`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type CallToActionSliceCtaWithBackgroundImage =
+  prismic.SharedSliceVariation<
+    "ctaWithBackgroundImage",
+    Simplify<CallToActionSliceCtaWithBackgroundImagePrimary>,
+    never
+  >;
+
+/**
  * Slice variation for *CallToAction*
  */
-type CallToActionSliceVariation = CallToActionSliceDefault;
+type CallToActionSliceVariation =
+  | CallToActionSliceDefault
+  | CallToActionSliceCtaWithBackgroundImage;
 
 /**
  * CallToAction Shared Slice
@@ -1802,12 +1944,12 @@ export interface ImageTextSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
-   * - **Default Value**: None
+   * - **Default Value**: Default
    * - **API ID Path**: image_text.default.primary.background_color
    * - **Documentation**: https://prismic.io/docs/fields/select
    */
   background_color: prismic.SelectField<
-    "None" | "Primary" | "Secondary",
+    "Default" | "Complementary" | "Inverted",
     "filled"
   >;
 
@@ -1908,12 +2050,12 @@ export interface ImageTextSliceVideoPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
-   * - **Default Value**: None
+   * - **Default Value**: Default
    * - **API ID Path**: image_text.video.primary.background_color
    * - **Documentation**: https://prismic.io/docs/fields/select
    */
   background_color: prismic.SelectField<
-    "None" | "Primary" | "Secondary",
+    "Default" | "Complementary" | "Inverted",
     "filled"
   >;
 
@@ -2076,10 +2218,14 @@ export interface LogoListSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
+   * - **Default Value**: Default
    * - **API ID Path**: logo_list.default.primary.background
    * - **Documentation**: https://prismic.io/docs/fields/select
    */
-  background: prismic.SelectField<"None" | "Primary" | "Secondary">;
+  background: prismic.SelectField<
+    "Default" | "Complementary" | "Inverted",
+    "filled"
+  >;
 
   /**
    * Subtitle field in *LogoList → Default → Primary*
@@ -2407,10 +2553,14 @@ export interface NumberedListSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
+   * - **Default Value**: Default
    * - **API ID Path**: numbered_list.default.primary.background
    * - **Documentation**: https://prismic.io/docs/fields/select
    */
-  background: prismic.SelectField<"None" | "Primary" | "Secondary">;
+  background: prismic.SelectField<
+    "Default" | "Primary" | "Secondary",
+    "filled"
+  >;
 
   /**
    * Title field in *NumberedList → Default → Primary*
@@ -2482,11 +2632,14 @@ export interface RichTextSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
-   * - **Default Value**: None
+   * - **Default Value**: Default
    * - **API ID Path**: rich_text.default.primary.background
    * - **Documentation**: https://prismic.io/docs/fields/select
    */
-  background: prismic.SelectField<"None" | "Primary" | "Secondary", "filled">;
+  background: prismic.SelectField<
+    "Default" | "Complementary" | "Inverted",
+    "filled"
+  >;
 
   /**
    * Title field in *RichText → Default → Primary*
@@ -2559,11 +2712,14 @@ export interface SimpleTextSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
-   * - **Default Value**: None
+   * - **Default Value**: Default
    * - **API ID Path**: simple_text.default.primary.background
    * - **Documentation**: https://prismic.io/docs/fields/select
    */
-  background: prismic.SelectField<"None" | "Primary" | "Secondary", "filled">;
+  background: prismic.SelectField<
+    "Default" | "Complementary" | "Inverted",
+    "filled"
+  >;
 
   /**
    * Subtitle field in *SimpleText → Default → Primary*
@@ -2761,11 +2917,14 @@ export interface TestimonialSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
-   * - **Default Value**: None
+   * - **Default Value**: Default
    * - **API ID Path**: testimonial.default.primary.background
    * - **Documentation**: https://prismic.io/docs/fields/select
    */
-  background: prismic.SelectField<"None" | "Primary" | "Secondary", "filled">;
+  background: prismic.SelectField<
+    "Default" | "Complementary" | "Inverted",
+    "filled"
+  >;
 
   /**
    * Subtitle field in *Testimonial → Default → Primary*
@@ -2906,11 +3065,14 @@ export interface TileGridSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
-   * - **Default Value**: None
+   * - **Default Value**: Default
    * - **API ID Path**: tile_grid.default.primary.background
    * - **Documentation**: https://prismic.io/docs/fields/select
    */
-  background: prismic.SelectField<"None" | "Primary" | "Secondary", "filled">;
+  background: prismic.SelectField<
+    "Default" | "Complementary" | "Inverted",
+    "filled"
+  >;
 
   /**
    * Card Style field in *TileGrid → Default → Primary*
@@ -3094,8 +3256,10 @@ declare module "@prismicio/client" {
       AccordionSliceHorizontalAccordion,
       CallToActionSlice,
       CallToActionSliceDefaultPrimary,
+      CallToActionSliceCtaWithBackgroundImagePrimary,
       CallToActionSliceVariation,
       CallToActionSliceDefault,
+      CallToActionSliceCtaWithBackgroundImage,
       CarouselSlice,
       CarouselSliceVariation,
       CarouselSliceDefault,

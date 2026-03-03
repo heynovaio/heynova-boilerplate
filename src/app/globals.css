@@ -71,22 +71,6 @@
     rgba(217, 202, 248, 0.6) 89.82%
   );
 
-  /* Theme Colours */
-
-  /** Leave this if they help but if no remove them - karlee */
-  --color-primary: var(--color-primary);
-  --color-secondary: var(--color-secondary);
-  --color-highlight: var(--color-highlight);
-  --color-complimentary: var(--color-complimentary);
-  --color-hyperlink: var(--color-hyperlink);
-  --color-hover: var(--color-hover);
-  --color-focus: var(--color-focus);
-
-  --color-background-none: var(--color-midnight);
-  --color-background-primary: var(--color-teal-drk);
-  --color-background-secondary: var(--color-purple-drk);
-  --color-text-primary: var(--color-white);
-
   /* Font Size */
   --text-base: 1.25rem;
   --text-h1-home: 5.375rem;
@@ -112,7 +96,51 @@
   --font-weight-extraBold: 700;
 }
 
-@source inline("bg-background-primary bg-background-secondary bg-background-none");
+@layer utilities {
+  .bg-background-default {
+    background-color: transparent;
+  }
+  .bg-background-complementary {
+    background-color: var(--color-complementary);
+  }
+  .bg-background-inverted {
+    background-color: var(--color-secondary);
+  }
+  .text-text-primary {
+    color: var(--color-white);
+  }
+
+  /* Inner card styles */
+  .bg-background-default {
+    & .bg-background-default.bg-background-default {
+      background: var(--color-secondary);
+    }
+
+    & .bg-background-inverted.bg-background-inverted {
+      border: 1px solid var(--color-secondary);
+    }
+  }
+
+  .bg-background-complementary {
+    & .bg-background-default.bg-background-default {
+      background: var(--color-primary);
+    }
+
+    & .bg-background-inverted.bg-background-inverted {
+      border: 1px solid var(--color-primary);
+    }
+  }
+
+  .bg-background-inverted {
+    & .bg-background-default.bg-background-default {
+      background: var(--color-primary);
+    }
+
+    & .bg-background-inverted.bg-background-inverted {
+      border: 1px solid var(--color-primary);
+    }
+  }
+}
 
 @layer base {
   /* Base */
@@ -264,47 +292,6 @@
 }
 
 @layer components {
-  .bg-background-none {
-    .accordion {
-      background: transparent;
-    }
-    .cta {
-      background: transparent;
-    }
-
-    .testimonial-content {
-      background: transparent;
-    }
-  }
-
-  .bg-background-primary {
-    .accordion {
-      background: var(--color-primary);
-    }
-
-    .cta {
-      background: var(--color-primary);
-    }
-
-    .testimonial-content {
-      background: var(--color-primary);
-    }
-  }
-
-  .bg-background-secondary {
-    .accordion {
-      background: var(--color-secondary);
-    }
-
-    .cta {
-      background: var(--color-secondary);
-    }
-
-    .testimonial-content {
-      background: var(--color-secondary);
-    }
-  }
-
   .text-content {
     h1 {
       background: linear-gradient(90deg, #97e1e5 0%, #d9caf8 50%, #97e1e5 100%);

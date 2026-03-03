@@ -10,7 +10,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const client = createClient();
+  const client: ReturnType<typeof createClient> = createClient();
 
   const theme = await client.getSingle("colors");
 
@@ -18,7 +18,7 @@ export default async function RootLayout({
   const primary = theme.data.primary;
   const secondary = theme.data.secondary;
   const highlight = theme.data.highlight;
-  const complimentary = theme.data.complimentary;
+  const complementary = theme.data.complementary;
   const black = theme.data.black;
   const white = theme.data.white;
   const hyperlink = theme.data.hyperlink;
@@ -31,25 +31,26 @@ export default async function RootLayout({
   const shadow_style = theme.data.shadow_style;
 
   return (
-    <html lang="en">
-      <body
-        style={
-          {
-            "--color-primary": primary,
-            "--color-secondary": secondary,
-            "--color-highlight": highlight,
-            "--color-complimentary": complimentary,
-            "--color-black": black,
-            "--color-white": white,
-            "--color-hyperlink": hyperlink,
-            "--color-hover": hover,
-            "--color-focus": focus,
-            "--radius-scale": radius_scale,
-            "--shadow-style": shadow_style,
-            "--base-contrast-mode": base_constrast_mode,
-          } as React.CSSProperties
-        }
-      >
+    <html
+      lang="en"
+      style={
+        {
+          "--color-primary": primary,
+          "--color-secondary": secondary,
+          "--color-highlight": highlight,
+          "--color-complementary": complementary,
+          "--color-black": black,
+          "--color-white": white,
+          "--color-hyperlink": hyperlink,
+          "--color-hover": hover,
+          "--color-focus": focus,
+          "--radius-scale": radius_scale,
+          "--shadow-style": shadow_style,
+          "--base-contrast-mode": base_constrast_mode,
+        } as React.CSSProperties
+      }
+    >
+      <body>
         <ReactQueryProvider>{children}</ReactQueryProvider>
         <PrismicPreview repositoryName={repositoryName} />
       </body>

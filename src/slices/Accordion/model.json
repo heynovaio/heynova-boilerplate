@@ -18,10 +18,23 @@
             "label": "Background",
             "placeholder": "",
             "options": [
-              "None",
-              "Primary",
-              "Secondary"
-            ]
+              "Default",
+              "Complementary",
+              "Inverted"
+            ],
+            "default_value": "Default"
+          }
+        },
+        "card_style": {
+          "type": "Select",
+          "config": {
+            "label": "Card Style",
+            "placeholder": "",
+            "options": [
+              "Default",
+              "Inverted"
+            ],
+            "default_value": "Default"
           }
         },
         "subtitle": {
@@ -115,10 +128,23 @@
             "label": "Background",
             "placeholder": "",
             "options": [
-              "None",
-              "Primary",
-              "Secondary"
-            ]
+              "Default",
+              "Complementary",
+              "Inverted"
+            ],
+            "default_value": "Default"
+          }
+        },
+        "card_style": {
+          "type": "Select",
+          "config": {
+            "label": "Card Style",
+            "placeholder": "",
+            "options": [
+              "Default",
+              "Inverted"
+            ],
+            "default_value": "Default"
           }
         },
         "subtitle": {

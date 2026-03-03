@@ -18,10 +18,11 @@
             "label": "Background",
             "placeholder": "",
             "options": [
-              "None",
-              "Primary",
-              "Secondary"
-            ]
+              "Default",
+              "Complementary",
+              "Inverted"
+            ],
+            "default_value": "Default"
           }
         },
         "subtitle": {
