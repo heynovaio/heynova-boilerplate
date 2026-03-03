@@ -268,6 +268,7 @@ interface ColorsDocumentData {
 
   /**
    * Complementary field in *Theme*
+   * Complementary field in *Theme*
    *
    * - **Field Type**: Color
    * - **Placeholder**: *None*
