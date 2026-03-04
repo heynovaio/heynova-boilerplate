@@ -1353,6 +1353,16 @@ export interface AccordionSliceHorizontalAccordionPrimaryAccordionItem {
   button: prismic.Repeatable<
     prismic.LinkField<string, string, unknown, prismic.FieldState, never>
   >;
+
+  /**
+   * Icon field in *Accordion → Horizontal Accordion → Primary → Accordion*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: accordion.horizontalAccordion.primary.accordion[].icon
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  icon: prismic.ImageField<never>;
 }
 
 /**
