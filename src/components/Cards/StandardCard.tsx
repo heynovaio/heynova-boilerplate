@@ -6,9 +6,9 @@ import {
   RichTextField,
 } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
-import { ResponsiveImage } from "../Image/ResponsiveImage";
-import { PrismicNextLink } from "@prismicio/next";
+
 import { Button } from "../Buttons/Button";
+import { ResponsiveImage } from "../ResponsiveImage/ResponsiveImage";
 
 interface StandardCardProps {
   title?: RichTextField | KeyTextField | string;
