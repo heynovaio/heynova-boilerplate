@@ -82,9 +82,6 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "horizontal_accordion": {
-              "type": "SharedSlice"
-            },
             "carousel": {
               "type": "SharedSlice"
             },
