@@ -211,6 +211,32 @@
 										}
 									]
 								}
+							],
+							[
+								"icon",
+								{
+									"__TYPE__": "ImageContent",
+									"provider": "imgix",
+									"url": "https://images.unsplash.com/photo-1592187270271-9a4b84faa228?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw1fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3NzI2MjkzNjR8MA&ixlib=rb-4.1.0&q=85",
+									"alt": "sliced orange fruit on blue surface",
+									"origin": {
+										"id": "8ZGgg6rhzxs",
+										"url": "https://images.unsplash.com/photo-1592187270271-9a4b84faa228?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw1fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3NzI2MjkzNjR8MA&ixlib=rb-4.1.0&q=85",
+										"width": 4000,
+										"height": 6000
+									},
+									"width": 4000,
+									"height": 6000,
+									"edit": {
+										"background": "transparent",
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										}
+									},
+									"thumbnails": {}
+								}
 							]
 						]
 					},
@@ -245,6 +271,24 @@
 												"spans": []
 											},
 											"direction": "ltr"
+										}
+									]
+								}
+							],
+							[
+								"button",
+								{
+									"__TYPE__": "RepeatableContent",
+									"type": "Link",
+									"value": [
+										{
+											"__TYPE__": "LinkContent",
+											"key": "5012f71f-4453-4aa2-b154-40c2085061f5",
+											"value": {
+												"__TYPE__": "ExternalLink",
+												"url": "www.google.com",
+												"text": "Button Text"
+											}
 										}
 									]
 								}

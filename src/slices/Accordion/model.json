@@ -191,6 +191,14 @@
                   "allowText": true,
                   "repeat": true
                 }
+              },
+              "icon": {
+                "type": "Image",
+                "config": {
+                  "label": "Icon",
+                  "constraint": {},
+                  "thumbnails": []
+                }
               }
             }
           }
