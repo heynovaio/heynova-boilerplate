@@ -34,7 +34,7 @@ export const HorizontalAccordion: React.FC<HorizontalAccordionProps> = ({
   const [selectedIndex, setSelectedIndex] = useState(0);
   return (
     <>
-      <div className="hidden test md:block">
+      <div className="hidden test md:block mt-4 md:mt-8">
         <TabGroup selectedIndex={selectedIndex} onChange={setSelectedIndex}>
           <div className="flex gap-10">
             <TabList className="w-1/2 flex flex-col h-full flex-1">
