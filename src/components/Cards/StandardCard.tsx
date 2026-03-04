@@ -11,7 +11,7 @@ import { PrismicNextLink } from "@prismicio/next";
 import { Button } from "../Buttons/Button";
 
 interface StandardCardProps {
-  title: RichTextField | KeyTextField | string;
+  title?: RichTextField | KeyTextField | string;
   subtitle?: KeyTextField | string;
   description?: RichTextField | KeyTextField | string;
   button?: LinkField;
@@ -27,6 +27,8 @@ interface StandardCardProps {
   titleTextClassName?: string;
   buttonClass?: "primary" | "secondary" | "outline";
   titleLevel?: "h3" | "h4";
+
+  noBackground?: boolean;
 }
 
 export const StandardCard = ({
@@ -44,6 +46,7 @@ export const StandardCard = ({
   buttonClass = "primary",
   titleTextClassName = "",
   titleLevel = "h3",
+  noBackground = false,
 }: StandardCardProps) => {
   const hasImage = isFilled.image(image);
 
@@ -143,10 +146,30 @@ export const StandardCard = ({
     );
   };
 
-  return (
+  return !noBackground ? (
     <div
       className={`border ${borderColorClass} ${cardBgColorClass} ${radiusClass} ${shadowClass} p-6 w-full overflow-hidden h-full flex flex-col`}
     >
+      {hasImage && renderImage()}
+
+      <div
+        className={`
+        flex flex-col w-full
+        ${
+          !hasImage
+            ? "flex-1 justify-center items-center text-center"
+            : alignmentClass
+        }
+      `}
+      >
+        {renderSubtitle()}
+        {renderTitle()}
+        {renderDescription()}
+        {renderButton()}
+      </div>
+    </div>
+  ) : (
+    <div className={` p-6 w-full overflow-hidden h-full flex flex-col`}>
       {hasImage && renderImage()}
 
       <div

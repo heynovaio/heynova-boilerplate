@@ -26,8 +26,9 @@ const TileGrid: FC<TileGridProps> = ({ slice }) => {
               <StandardCard
                 title={item.title}
                 description={item.body}
-                button={item.button}
+                // button={item.button}
                 image={item.image}
+                noBackground={true}
               />
             </div>
           ))}
