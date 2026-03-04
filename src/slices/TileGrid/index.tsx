@@ -3,7 +3,6 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { StandardCard } from "@/components/Cards/StandardCard";
 import { Container } from "@/components";
-import { PrismicNextLink } from "@prismicio/next";
 
 /**
  * Props for `TileGrid`.
