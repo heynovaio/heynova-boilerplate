@@ -18,6 +18,17 @@ export type AccordionProps = SliceComponentProps<Content.AccordionSlice>;
 /**
  * Component for "Accordion" Slices.
  */
+
+{
+  /**
+  OVERALL TODOS:
+  - Needs to be fully hooked up to the theme stuff wit the backgrounds etc.
+  - Can pass in the background class for the card and the selected tab class, unsure how we are handling text color though
+  - Same with the color of the border on the card and the buttons within, and the lines between tabs, what colors should they be?
+  
+  */
+}
+
 const Accordion: FC<AccordionProps> = ({ slice }) => {
   if (!slice.primary.accordion) {
     return null;
@@ -29,8 +40,10 @@ const Accordion: FC<AccordionProps> = ({ slice }) => {
   const contents = slice.primary.accordion.map(
     (item) => item.description || "",
   );
-  // const images = slice.primary.accordion.map((item) => item.icon || null);
-  const buttons = slice.primary.accordion.map((item) => item.button || null);
+  const images = slice.primary.accordion.map((item) => {
+    return isVertical ? null : (item as any).icon || null;
+  });
+  const buttons = slice.primary.button;
 
   const selectedTabClass = "bg-secondary"; // TODO: replace this with however Faye is setting up all this stuff
   const backgroundClass = `bg-background-${slice.primary.background ? slice.primary.background.toLocaleLowerCase() : "bg-background-none"}`;
@@ -71,8 +84,8 @@ const Accordion: FC<AccordionProps> = ({ slice }) => {
           <HorizontalAccordion
             titles={titles}
             contents={contents}
-            // images={images}
-            // buttons={buttons}
+            images={images}
+            buttons={buttons}
             backgroundClass={backgroundClass}
             selectedTabClass={selectedTabClass}
           />
