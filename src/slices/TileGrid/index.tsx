@@ -1,10 +1,12 @@
 import { FC } from "react";
 import { Content, ImageField, RichTextField } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
 import { StandardCard } from "@/components/Cards/StandardCard";
 import { Container, Section } from "@/components";
 import { Grid } from "@/components";
-
+import { ContentBox } from "@/components";
+import { isFilled } from "@prismicio/client";
+import { PrismicNextLink } from "@prismicio/next";
 /**
  * Props for `TileGrid`.
  */
@@ -21,7 +23,6 @@ const TileGrid: FC<TileGridProps> = ({ slice }) => {
     body: tile.body as RichTextField,
     image: tile.image as ImageField,
     button: Array.isArray(tile.button) ? tile.button[0] : tile.button,
-    // image_style: tile.image_style || false,
   }));
 
   const selectedImageStyle = slice.primary.image_style;
@@ -31,33 +32,47 @@ const TileGrid: FC<TileGridProps> = ({ slice }) => {
       : selectedImageStyle === "Icon"
         ? "iconCentered"
         : "contained";
+
+  const buttons = slice.primary.buttons?.some((button) => isFilled.link(button))
+    ? slice.primary.buttons.map((link, index) =>
+        isFilled.link(link) ? (
+          <PrismicNextLink
+            field={link}
+            key={index}
+            className="btn btn-primary"
+          />
+        ) : null,
+      )
+    : undefined;
+
   return (
     <Section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
+      <ContentBox
+        title={slice.primary.title}
+        tagline={slice.primary.subtitle || ""}
+        content={<PrismicRichText field={slice.primary.body} />}
+        buttons={buttons}
+      />
       <Container>
-        {/* <ContentGrid
-          cards={cards}
-          numCols={numColumns}
-          title={slice.primary.title}
-          body={slice.primary.body}
-        /> */}
-        <Grid maxColumns={numColumns}>
-          {cards.map((card, index) => (
-            <StandardCard
-              key={index}
-              title={card.title}
-              description={card.body}
-              image={card.image}
-              // imageStyle={card.image_style || false}
-              button={card.button}
-              cardBgColorClass="bg-primary"
-              borderColorClass="border-red"
-              imageStyle={imageStyle}
-            />
-          ))}
-        </Grid>
+        <div className="mt-10">
+          <Grid maxColumns={numColumns}>
+            {cards.map((card, index) => (
+              <StandardCard
+                key={index}
+                title={card.title}
+                description={card.body}
+                image={card.image}
+                button={card.button}
+                cardBgColorClass="bg-primary"
+                borderColorClass="border-red"
+                imageStyle={imageStyle}
+              />
+            ))}
+          </Grid>
+        </div>
       </Container>
     </Section>
   );
