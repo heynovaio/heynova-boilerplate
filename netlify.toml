@@ -1,6 +1,2 @@
-[build]
-  command = "node scripts/generate-navigation-routing.mjs && node scripts/generate-redirects.mjs && npm run build"
-  publish = ".next"
-
 [[plugins]]
   package = "@netlify/plugin-nextjs"
