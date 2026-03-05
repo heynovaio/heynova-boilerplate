@@ -11,7 +11,9 @@
     "lint": "eslint",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "slicemachine": "start-slicemachine"
+    "slicemachine": "start-slicemachine",
+    "predev": "node scripts/generate-navigation-routing.mjs && node scripts/generate-redirects.mjs",
+    "prebuild": "node scripts/generate-navigation-routing.mjs && node scripts/generate-redirects.mjs"
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.8.1",
@@ -30,6 +32,7 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^5.0.0",
+    "@netlify/plugin-nextjs": "^5.15.8",
     "@slicemachine/adapter-next": "^0.3.94",
     "@storybook/addon-a11y": "^10.1.11",
     "@storybook/addon-docs": "^10.1.11",
