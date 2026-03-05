@@ -25,6 +25,30 @@
             "default_value": "None"
           }
         },
+        "card_style": {
+          "type": "Select",
+          "config": {
+            "label": "Card Style",
+            "placeholder": "",
+            "options": [
+              "Default",
+              "Inverted"
+            ],
+            "default_value": "Default"
+          }
+        },
+        "image_style": {
+          "type": "Select",
+          "config": {
+            "label": "Image Style",
+            "placeholder": "",
+            "options": [
+              "Full Width",
+              "Centered                                                                                                                                                   ",
+              "Icon"
+            ]
+          }
+        },
         "columns": {
           "type": "Select",
           "config": {

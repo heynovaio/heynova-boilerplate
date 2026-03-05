@@ -104,11 +104,8 @@ export const StandardCard = ({
 
     if (imageStyle === "contained") {
       return (
-        <div className="w-full flex items-center justify-center pb-6">
-          <ResponsiveImage
-            image={image}
-            className="object-contain max-h-64 w-auto"
-          />
+        <div className="w-full pb-6">
+          <ResponsiveImage image={image} className="object-cover h-72 w-full" />
         </div>
       );
     }
@@ -120,7 +117,7 @@ export const StandardCard = ({
         >
           <ResponsiveImage
             image={image}
-            className="object-contain max-h-20 w-auto"
+            className="object-contain max-h-32 w-auto"
           />
         </div>
       );
@@ -130,7 +127,7 @@ export const StandardCard = ({
       <div className="relative -mx-8 -mt-8 mb-4 ">
         <ResponsiveImage
           image={image}
-          className="w-full h-full object-cover rounded-none"
+          className="w-full h-72 object-cover rounded-none"
         />
       </div>
     );

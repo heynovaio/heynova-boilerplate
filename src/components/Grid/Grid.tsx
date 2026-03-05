@@ -3,7 +3,7 @@ import clsx from "clsx";
 import React, { ReactNode } from "react";
 
 interface GridProps {
-  maxColumns: number | NumberField;
+  maxColumns: string | number | NumberField;
   className?: string;
   children: ReactNode;
 }
