@@ -25,7 +25,7 @@ export const Footer = ({ global, slices, footerData }: FooterProps) => {
         <div className="flex flex-col md:flex-row flex-wrap justify-center md:justify-between gap-x-8 gap-y-12 w-full text-center md:text-left">
           <div className="flex flex-col items-center lg:items-start">
             <ResponsiveImage
-              field={global?.site_logo}
+              image={global?.site_logo}
               containerClassName="mb-8 max-w-[180px] md:max-w-[220px] logo"
             />
             <div className="flex flex-col items-center md:items-start">
