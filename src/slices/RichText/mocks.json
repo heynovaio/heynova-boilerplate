@@ -5,7 +5,7 @@
 		"primary": {
 			"background": {
 				"__TYPE__": "FieldContent",
-				"value": "Secondary",
+				"value": "Default",
 				"type": "Select"
 			},
 			"title": {

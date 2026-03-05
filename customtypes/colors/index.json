@@ -56,10 +56,10 @@
           "placeholder": ""
         }
       },
-      "complimentary": {
+      "complementary": {
         "type": "Color",
         "config": {
-          "label": "Complimentary",
+          "label": "Complementary",
           "placeholder": ""
         }
       },
