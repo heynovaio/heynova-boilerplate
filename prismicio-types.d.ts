@@ -2776,6 +2776,31 @@ export interface TileGridSliceDefaultPrimary {
   background: prismic.SelectField<"None" | "Primary" | "Secondary", "filled">;
 
   /**
+   * Card Style field in *TileGrid → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Default
+   * - **API ID Path**: tile_grid.default.primary.card_style
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  card_style: prismic.SelectField<"Default" | "Inverted", "filled">;
+
+  /**
+   * Image Style field in *TileGrid → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tile_grid.default.primary.image_style
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  image_style: prismic.SelectField<
+    | "Full Width"
+    | "Centered                                                                                                                                                   "
+    | "Icon"
+  >;
+
+  /**
    * Columns field in *TileGrid → Default → Primary*
    *
    * - **Field Type**: Select
