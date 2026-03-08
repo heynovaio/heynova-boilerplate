@@ -6,7 +6,6 @@ import {
   RichTextField,
 } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
-
 import { Button } from "../Buttons/Button";
 import { ResponsiveImage } from "../ResponsiveImage/ResponsiveImage";
 
@@ -18,7 +17,12 @@ interface StandardCardProps {
   image?: ImageField;
 
   textAlignment?: "left" | "center" | "right";
-  imageStyle?: "fullWidth" | "contained" | "iconCentered" | "iconLeft";
+  imageStyle?:
+    | "fullWidth"
+    | "contained"
+    | "iconCentered"
+    | "iconLeft"
+    | "imageBeside";
   radiusClass?: string;
   shadowClass?: string;
 
@@ -49,6 +53,7 @@ export const StandardCard = ({
   noBackground = false,
 }: StandardCardProps) => {
   const hasImage = isFilled.image(image);
+  const isImageBeside = imageStyle === "imageBeside";
 
   const alignmentClass = {
     left: "text-left items-start",
@@ -84,11 +89,14 @@ export const StandardCard = ({
       <h4 className={`${titleTextClassName} mb-4`}>{title}</h4>
     );
   };
+
   const renderDescription = () => {
     if (!description) return null;
+
     if (Array.isArray(description)) {
       return <PrismicRichText field={description} />;
     }
+
     return <p>{description}</p>;
   };
 
@@ -113,7 +121,9 @@ export const StandardCard = ({
     if (imageStyle === "iconLeft" || imageStyle === "iconCentered") {
       return (
         <div
-          className={`w-full flex items-center ${imageStyle === "iconCentered" ? "justify-center" : "justify-start"} pb-6`}
+          className={`w-full flex items-center ${
+            imageStyle === "iconCentered" ? "justify-center" : "justify-start"
+          } pb-6`}
         >
           <ResponsiveImage
             image={image}
@@ -123,8 +133,16 @@ export const StandardCard = ({
       );
     }
 
+    if (imageStyle === "imageBeside") {
+      return (
+        <div className="flex-shrink-0">
+          <ResponsiveImage image={image} className="object-contain w-16 h-16" />
+        </div>
+      );
+    }
+
     return (
-      <div className="relative -mx-8 -mt-8 mb-4 ">
+      <div className="relative -mx-8 -mt-8 mb-4">
         <ResponsiveImage
           image={image}
           className="w-full h-72 object-cover rounded-none"
@@ -134,6 +152,7 @@ export const StandardCard = ({
   };
 
   const renderButton = () => {
+    if (isImageBeside) return null;
     if (!isFilled.link(button)) return null;
 
     return (
@@ -145,44 +164,53 @@ export const StandardCard = ({
 
   return !noBackground ? (
     <div
-      className={`border ${borderColorClass} ${cardBgColorClass} ${radiusClass} ${shadowClass} p-6 w-full overflow-hidden h-full flex flex-col`}
+      className={`border ${borderColorClass} ${cardBgColorClass} ${radiusClass} ${shadowClass} p-6 w-full overflow-hidden h-full`}
     >
-      {hasImage && renderImage()}
-
       <div
-        className={`
-        flex flex-col w-full
-        ${
-          !hasImage
-            ? "flex-1 justify-center items-center text-center"
-            : alignmentClass
-        }
-      `}
+        className={`flex w-full h-full ${
+          isImageBeside ? "flex-row gap-4 items-start" : "flex-col"
+        }`}
       >
-        {renderSubtitle()}
-        {renderTitle()}
-        {renderDescription()}
-        {renderButton()}
+        {hasImage && renderImage()}
+
+        <div
+          className={`flex flex-col w-full ${
+            isImageBeside
+              ? "text-left items-start"
+              : !hasImage
+                ? "flex-1 justify-center items-center text-center"
+                : alignmentClass
+          }`}
+        >
+          {renderSubtitle()}
+          {renderTitle()}
+          {renderDescription()}
+          {renderButton()}
+        </div>
       </div>
     </div>
   ) : (
-    <div className={` p-6 w-full overflow-hidden h-full flex flex-col`}>
-      {hasImage && renderImage()}
-
+    <div className="p-6 w-full overflow-hidden h-full">
       <div
-        className={`
-        flex flex-col w-full
-        ${
-          !hasImage
-            ? "flex-1 justify-center items-center text-center"
-            : alignmentClass
-        }
-      `}
+        className={`flex w-full h-full ${
+          isImageBeside ? "flex-row gap-4 items-start" : "flex-col"
+        }`}
       >
-        {renderSubtitle()}
-        {renderTitle()}
-        {renderDescription()}
-        {renderButton()}
+        {hasImage && renderImage()}
+
+        <div
+          className={`flex flex-col w-full ${
+            isImageBeside
+              ? "text-left items-start"
+              : !hasImage
+                ? "flex-1 justify-center items-center text-center"
+                : alignmentClass
+          }`}
+        >
+          {renderSubtitle()}
+          {renderTitle()}
+          {renderDescription()}
+        </div>
       </div>
     </div>
   );

@@ -5,12 +5,12 @@
 		"primary": {
 			"background": {
 				"__TYPE__": "FieldContent",
-				"value": "Primary",
-				"type": "Select"
+				"type": "Select",
+				"value": "Primary"
 			},
 			"alignment": {
 				"__TYPE__": "BooleanContent",
-				"value": false
+				"value": true
 			},
 			"card_background": {
 				"__TYPE__": "FieldContent",
@@ -19,8 +19,8 @@
 			},
 			"number_of_columns": {
 				"__TYPE__": "FieldContent",
-				"value": "4",
-				"type": "Select"
+				"type": "Select",
+				"value": "4"
 			},
 			"blocks": {
 				"__TYPE__": "GroupContentType",
@@ -62,8 +62,10 @@
 										{
 											"type": "paragraph",
 											"content": {
-												"text": "Enim aliquip nulla reprehenderit nisi incididunt laborum adipisicing adipisicing. Ad minim do elit sit amet qui veniam ipsum labore sit voluptate."
-											}
+												"text": "Enim aliquip nulla ",
+												"spans": []
+											},
+											"direction": "ltr"
 										}
 									]
 								}
@@ -76,13 +78,207 @@
 										{
 											"type": "paragraph",
 											"content": {
-												"text": "Do anim dolore id esse aliqua consectetur id laboris officia anim dolore pariatur. Officia mollit fugiat dolore occaecat qui labore aute dolore dolor. Sunt dolor laborum cillum excepteur fugiat exercitation mollit amet."
-											}
+												"text": "Do anim dolore",
+												"spans": []
+											},
+											"direction": "ltr"
 										}
 									]
 								}
 							]
 						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"icon",
+								{
+									"__TYPE__": "ImageContent",
+									"provider": "imgix",
+									"url": "https://images.unsplash.com/photo-1577234266742-23cb5a0490da?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMnx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzcyOTYwNDczfDA&ixlib=rb-4.1.0&q=85",
+									"alt": "sliced orange",
+									"origin": {
+										"id": "lyBXE61X5Jw",
+										"url": "https://images.unsplash.com/photo-1577234266742-23cb5a0490da?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMnx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzcyOTYwNDczfDA&ixlib=rb-4.1.0&q=85",
+										"width": 3024,
+										"height": 4032
+									},
+									"width": 3024,
+									"height": 4032,
+									"edit": {
+										"background": "transparent",
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										}
+									},
+									"thumbnails": {}
+								}
+							],
+							[
+								"title",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Orange",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							],
+							[
+								"description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Oranges",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							]
+						],
+						"key": "ce7427f5-b76a-465e-9f6c-f76210781a76"
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"icon",
+								{
+									"__TYPE__": "ImageContent",
+									"provider": "imgix",
+									"url": "https://images.unsplash.com/photo-1597589022928-bb4002c099ec?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMXx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzcyOTYwNDczfDA&ixlib=rb-4.1.0&q=85",
+									"alt": "yellow lemon fruit beside green leaves",
+									"origin": {
+										"id": "3t8rQ3LD2JI",
+										"url": "https://images.unsplash.com/photo-1597589022928-bb4002c099ec?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMXx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzcyOTYwNDczfDA&ixlib=rb-4.1.0&q=85",
+										"width": 3024,
+										"height": 3024
+									},
+									"width": 3024,
+									"height": 3024,
+									"edit": {
+										"background": "transparent",
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										}
+									},
+									"thumbnails": {}
+								}
+							],
+							[
+								"title",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Lemon",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							],
+							[
+								"description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Lemons",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							]
+						],
+						"key": "b34a0a69-142d-4522-b596-16ed7a148ac4"
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"icon",
+								{
+									"__TYPE__": "ImageContent",
+									"provider": "imgix",
+									"url": "https://images.unsplash.com/photo-1612267174385-23fbfe6fde59?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxM3x8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzcyOTYwNDczfDA&ixlib=rb-4.1.0&q=85",
+									"alt": "sliced lemon fruit on white background",
+									"origin": {
+										"id": "hspehWjV4Yo",
+										"url": "https://images.unsplash.com/photo-1612267174385-23fbfe6fde59?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxM3x8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzcyOTYwNDczfDA&ixlib=rb-4.1.0&q=85",
+										"width": 5504,
+										"height": 5504
+									},
+									"width": 5504,
+									"height": 5504,
+									"edit": {
+										"background": "transparent",
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										}
+									},
+									"thumbnails": {}
+								}
+							],
+							[
+								"title",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Kiwi?",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							],
+							[
+								"description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Maybe??",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							]
+						],
+						"key": "5f0a0080-c92b-47e6-8daa-bde3d62956a5"
 					}
 				]
 			}
