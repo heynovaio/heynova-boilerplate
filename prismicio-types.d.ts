@@ -1657,6 +1657,133 @@ export type CarouselSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *FeatureBlock → Default → Primary → Blocks*
+ */
+export interface FeatureBlockSliceDefaultPrimaryBlocksItem {
+  /**
+   * Icon field in *FeatureBlock → Default → Primary → Blocks*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature_block.default.primary.blocks[].icon
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  icon: prismic.ImageField<never>;
+
+  /**
+   * Title field in *FeatureBlock → Default → Primary → Blocks*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature_block.default.primary.blocks[].title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *FeatureBlock → Default → Primary → Blocks*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature_block.default.primary.blocks[].description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *FeatureBlock → Default → Primary*
+ */
+export interface FeatureBlockSliceDefaultPrimary {
+  /**
+   * Background field in *FeatureBlock → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature_block.default.primary.background
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  background: prismic.SelectField<
+    "None" | "Primary" | "Inverted" | "Complementary"
+  >;
+
+  /**
+   * Alignment field in *FeatureBlock → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: feature_block.default.primary.alignment
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  alignment: prismic.BooleanField;
+
+  /**
+   * Card Background field in *FeatureBlock → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature_block.default.primary.card_background
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  card_background: prismic.SelectField<
+    "None" | "Primary" | "Inverted" | "Complementary"
+  >;
+
+  /**
+   * Number of Columns field in *FeatureBlock → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature_block.default.primary.number_of_columns
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  number_of_columns: prismic.SelectField<"2" | "3" | "4">;
+
+  /**
+   * Blocks field in *FeatureBlock → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature_block.default.primary.blocks[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  blocks: prismic.GroupField<
+    Simplify<FeatureBlockSliceDefaultPrimaryBlocksItem>
+  >;
+}
+
+/**
+ * Default variation for FeatureBlock Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type FeatureBlockSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FeatureBlockSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *FeatureBlock*
+ */
+type FeatureBlockSliceVariation = FeatureBlockSliceDefault;
+
+/**
+ * FeatureBlock Shared Slice
+ *
+ * - **API ID**: `feature_block`
+ * - **Description**: FeatureBlock
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type FeatureBlockSlice = prismic.SharedSlice<
+  "feature_block",
+  FeatureBlockSliceVariation
+>;
+
+/**
  * Primary content in *ImageText → Default → Primary*
  */
 export interface ImageTextSliceDefaultPrimary {
@@ -2962,6 +3089,11 @@ declare module "@prismicio/client" {
       CarouselSlice,
       CarouselSliceVariation,
       CarouselSliceDefault,
+      FeatureBlockSlice,
+      FeatureBlockSliceDefaultPrimaryBlocksItem,
+      FeatureBlockSliceDefaultPrimary,
+      FeatureBlockSliceVariation,
+      FeatureBlockSliceDefault,
       ImageTextSlice,
       ImageTextSliceDefaultPrimary,
       ImageTextSliceVideoPrimary,

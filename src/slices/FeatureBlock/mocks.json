@@ -1,0 +1,92 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"background": {
+				"__TYPE__": "FieldContent",
+				"value": "Primary",
+				"type": "Select"
+			},
+			"alignment": {
+				"__TYPE__": "BooleanContent",
+				"value": false
+			},
+			"card_background": {
+				"__TYPE__": "FieldContent",
+				"value": "Primary",
+				"type": "Select"
+			},
+			"number_of_columns": {
+				"__TYPE__": "FieldContent",
+				"value": "4",
+				"type": "Select"
+			},
+			"blocks": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"icon",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04",
+										"width": 4000,
+										"height": 4000
+									},
+									"url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04",
+									"width": 4000,
+									"height": 4000,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"alt": "force",
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"title",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Enim aliquip nulla reprehenderit nisi incididunt laborum adipisicing adipisicing. Ad minim do elit sit amet qui veniam ipsum labore sit voluptate."
+											}
+										}
+									]
+								}
+							],
+							[
+								"description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Do anim dolore id esse aliqua consectetur id laboris officia anim dolore pariatur. Officia mollit fugiat dolore occaecat qui labore aute dolore dolor. Sunt dolor laborum cillum excepteur fugiat exercitation mollit amet."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
