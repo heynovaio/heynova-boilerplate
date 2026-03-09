@@ -5,7 +5,7 @@
 		"primary": {
 			"background": {
 				"__TYPE__": "FieldContent",
-				"value": "Secondary",
+				"value": "Inverted",
 				"type": "Select"
 			},
 			"subtitle": {
@@ -44,8 +44,8 @@
 				"type": "Link",
 				"value": [
 					{
-						"__TYPE__": "LinkContent",
 						"key": "aafd90ab-2c99-44d4-a653-8c51aed3a692",
+						"__TYPE__": "LinkContent",
 						"value": {
 							"__TYPE__": "ExternalLink",
 							"url": "http://google.com",

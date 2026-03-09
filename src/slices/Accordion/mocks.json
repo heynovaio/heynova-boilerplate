@@ -10,7 +10,7 @@
 			},
 			"background": {
 				"__TYPE__": "FieldContent",
-				"value": "None",
+				"value": "Complementary",
 				"type": "Select"
 			},
 			"title": {
@@ -105,6 +105,11 @@
 						}
 					}
 				]
+			},
+			"card_style": {
+				"__TYPE__": "FieldContent",
+				"value": "Default",
+				"type": "Select"
 			}
 		},
 		"items": []
@@ -115,7 +120,7 @@
 		"primary": {
 			"background": {
 				"__TYPE__": "FieldContent",
-				"value": "Primary",
+				"value": "Default",
 				"type": "Select"
 			},
 			"subtitle": {
@@ -335,6 +340,11 @@
 						"key": "e5b65334-1098-4bf1-bd68-80b1227970d7"
 					}
 				]
+			},
+			"card_style": {
+				"__TYPE__": "FieldContent",
+				"value": "Default",
+				"type": "Select"
 			}
 		},
 		"items": [

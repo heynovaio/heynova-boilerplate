@@ -104,7 +104,7 @@
 			},
 			"background": {
 				"__TYPE__": "FieldContent",
-				"value": "Primary",
+				"value": "Default",
 				"type": "Select"
 			}
 		},

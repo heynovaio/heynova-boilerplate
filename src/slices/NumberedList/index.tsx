@@ -19,7 +19,7 @@ const NumberedList: FC<NumberedListProps> = ({ slice }) => {
     <Section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      styling={`bg-background-${slice.primary.background ? slice.primary.background.toLocaleLowerCase() : "bg-background-none"}`}
+      styling={`bg-background-${slice.primary.background ? slice.primary.background.toLocaleLowerCase() : "default"}`}
     >
       <Container>
         <NumberList
