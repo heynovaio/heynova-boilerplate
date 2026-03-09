@@ -7,8 +7,9 @@ import * as prismic from "@prismicio/client";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import React from "react";
-import { Layout } from "@/components";
+import { BackgroundImageHero, DefaultHero, Layout } from "@/components";
 import { getLocales } from "@/utils";
+import { PrismicNextLink } from "@prismicio/next";
 
 type Params = { lang: string };
 
@@ -53,7 +54,8 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   return (
     <Layout locales={locales} global={global.data} menus={menus.data}>
       <div>
-        {/* <HomeIntro data={page.data} /> */}
+        <BackgroundImageHero data={page.data} />
+        <DefaultHero data={page.data} />
         <SliceZone
           slices={page.data.slices}
           components={components}
