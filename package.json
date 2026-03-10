@@ -11,9 +11,7 @@
     "lint": "eslint",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "slicemachine": "start-slicemachine",
-    "predev": "node scripts/generate-navigation-routing.mjs && node scripts/generate-redirects.mjs",
-    "prebuild": "node scripts/generate-navigation-routing.mjs && node scripts/generate-redirects.mjs"
+    "slicemachine": "start-slicemachine"
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.8.1",
