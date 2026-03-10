@@ -31,7 +31,7 @@ export const TopBanner: React.FC<TopBannerProps> = ({
         }}
       />
       <div className="md:block hidden">
-        <LanguageSwitcher locales={locales} />
+        <LanguageSwitcher />
       </div>
     </div>
   );

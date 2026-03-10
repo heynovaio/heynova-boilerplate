@@ -93,7 +93,6 @@ export const Header: React.FC<HeaderProps> = ({ logo, slices, locales }) => {
                     </div>
                     {locales && (
                       <LanguageSwitcher
-                        locales={locales}
                         classname="bottom-0 fixed right-0"
                       />
                     )}

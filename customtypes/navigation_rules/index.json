@@ -1,0 +1,114 @@
+{
+  "format": "custom",
+  "id": "navigation_rules",
+  "label": "Navigation Rules",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "default_locale": {
+        "type": "Text",
+        "config": {
+          "label": "Default Locale",
+          "placeholder": "Url prefix will be blank on this url (i.e example.com/en-ca -> example.com)"
+        }
+      },
+      "locales": {
+        "type": "Group",
+        "config": {
+          "label": "Locales",
+          "repeat": true,
+          "fields": {
+            "locale": {
+              "type": "Text",
+              "config": {
+                "label": "Locale",
+                "placeholder": "ex: fr-CA"
+              }
+            },
+            "url_prefix": {
+              "type": "Text",
+              "config": {
+                "label": "URL Prefix",
+                "placeholder": "ex: fr (blank defaults prismic lang id)"
+              }
+            },
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": "ex: Français"
+              }
+            },
+            "enabled": {
+              "type": "Boolean",
+              "config": {
+                "label": "Enabled?",
+                "placeholder_false": "false",
+                "placeholder_true": "true",
+                "default_value": false
+              }
+            }
+          }
+        }
+      },
+      "redirect_rules": {
+        "type": "Group",
+        "config": {
+          "label": "Redirect Rules",
+          "repeat": true,
+          "fields": {
+            "locale": {
+              "type": "Text",
+              "config": {
+                "label": "Locale",
+                "placeholder": "(Leave blank to apply to all)"
+              }
+            },
+            "redirect_from": {
+              "type": "Text",
+              "config": {
+                "label": "From",
+                "placeholder": "ex: /origin"
+              }
+            },
+            "redirect_to": {
+              "type": "Text",
+              "config": {
+                "label": "To",
+                "placeholder": "ex: /destination"
+              }
+            },
+            "status": {
+              "type": "Select",
+              "config": {
+                "label": "Status",
+                "placeholder": "",
+                "options": ["301", "302", "404", "200"],
+                "default_value": "301"
+              }
+            },
+            "force": {
+              "type": "Boolean",
+              "config": {
+                "label": "Force?",
+                "placeholder_false": "false",
+                "placeholder_true": "true",
+                "default_value": false
+              }
+            },
+            "enabled": {
+              "type": "Boolean",
+              "config": {
+                "label": "Enabled?",
+                "placeholder_false": "false",
+                "placeholder_true": "true",
+                "default_value": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
