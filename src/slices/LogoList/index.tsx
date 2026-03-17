@@ -27,7 +27,7 @@ const LogoList: FC<LogoListProps> = ({ slice }) => {
     >
       <Container containerClassName="flex flex-col gap-6">
         <ContentBox
-          tagline={slice.primary.subtitle || ""}
+          tagline={slice.primary.tagline || ""}
           title={slice.primary.title}
           content={<PrismicRichText field={slice.primary.body} />}
           buttons={slice.primary.buttons.map((item, index) => {
