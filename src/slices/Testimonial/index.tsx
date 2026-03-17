@@ -2,6 +2,8 @@
 import { FC, useState, useEffect } from "react";
 import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { Container, ContentBox, Section } from "@/components";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 
 /**
  * Props for `Testimonial`.
@@ -11,9 +13,6 @@ export type TestimonialProps = SliceComponentProps<Content.TestimonialSlice>;
 /**
  * Component for "Testimonial" Slices.
  */
-import { useMemo } from "react";
-import { Container, Section } from "@/components";
-import { PrismicNextImage } from "@prismicio/next";
 
 const Testimonial: FC<TestimonialProps> = ({ slice }) => {
   const allTestimonials = slice.primary.testimonial;
@@ -47,10 +46,28 @@ const Testimonial: FC<TestimonialProps> = ({ slice }) => {
     <Section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      styling={`bg-background-${slice.primary.background ? slice.primary.background.toLocaleLowerCase() : "default"}`}
+      styling={`pt-6 bg-background-${slice.primary.background ? slice.primary.background.toLocaleLowerCase() : "default"}`}
     >
       <Container containerClassName="flex flex-col gap-12 items-center">
-        <div className="testimonial-content relative rounded-[1.25rem] py-4 px-6 md:py-16 md:px-28 overflow-hidden">
+        <ContentBox
+          tagline={slice.primary.tagline || ""}
+          title={slice.primary.title}
+          content={<PrismicRichText field={slice.primary.body} />}
+          buttons={slice.primary.buttons.map((item, index) => {
+            return (
+              <PrismicNextLink
+                field={item}
+                key={index}
+                className={
+                  index === 0 ? "btn btn-primary" : "btn btn-secondary"
+                }
+              />
+            );
+          })}
+        />
+        <div
+          className={`bg-background-${slice.primary.card_style ? slice.primary.card_style.toLocaleLowerCase() : "default"} relative rounded-default py-4 px-6 md:py-16 md:px-28 overflow-hidden`}
+        >
           <div
             className={`relative z-10 flex flex-col gap-4 md:gap-12 ${
               hasImage
@@ -69,18 +86,19 @@ const Testimonial: FC<TestimonialProps> = ({ slice }) => {
             )}
 
             <div
-              className={`flex flex-col gap-4 ${
+              className={`flex flex-col gap-2 ${
                 hasImage ? "" : "items-center max-w-2xl"
               }`}
             >
               <div>
-                <span className="text-accent tagline">
-                  {slice.primary.subtitle}
-                </span>
+                {slice.primary.tagline != "" && (
+                  <span className="text-accent tagline">
+                    {slice.primary.tagline}
+                  </span>
+                )}
                 <PrismicRichText field={slice.primary.title} />
               </div>
               <PrismicRichText field={displayedTestimonial.quote} />
-
               <div
                 className={`flex flex-col ${hasImage ? "" : "items-center"}`}
               >

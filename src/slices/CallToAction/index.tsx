@@ -24,6 +24,7 @@ const CallToAction: FC<CallToActionProps> = ({ slice }) => {
           styling={`bg-background-${slice.primary.card_style} cta rounded-4xl`}
         >
           <ContentBox
+            tagline={slice.primary.tagline || ""}
             title={slice.primary.title}
             content={<PrismicRichText field={slice.primary.body} />}
             buttons={slice.primary.buttons.map((button, index) => (

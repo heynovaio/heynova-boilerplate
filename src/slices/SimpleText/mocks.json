@@ -8,11 +8,6 @@
 				"value": "Inverted",
 				"type": "Select"
 			},
-			"subtitle": {
-				"__TYPE__": "FieldContent",
-				"value": "throat",
-				"type": "Text"
-			},
 			"title": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
@@ -53,6 +48,11 @@
 						}
 					}
 				]
+			},
+			"tagline": {
+				"__TYPE__": "FieldContent",
+				"value": "research",
+				"type": "Text"
 			}
 		},
 		"items": []

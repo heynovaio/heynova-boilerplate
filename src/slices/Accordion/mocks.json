@@ -3,11 +3,6 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"subtitle": {
-				"__TYPE__": "FieldContent",
-				"value": "movie",
-				"type": "Text"
-			},
 			"background": {
 				"__TYPE__": "FieldContent",
 				"value": "Complementary",
@@ -17,20 +12,9 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading1",
+						"type": "heading2",
 						"content": {
-							"text": "Realize"
-						}
-					}
-				]
-			},
-			"description": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Nostrud mollit laboris cupidatat ipsum excepteur qui ipsum officia fugiat sint nisi consectetur."
+							"text": "Large"
 						}
 					}
 				]
@@ -56,20 +40,6 @@
 								}
 							],
 							[
-								"description",
-								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "paragraph",
-											"content": {
-												"text": "Sit Lorem in sint. Labore nostrud elit veniam dolore duis exercitation."
-											}
-										}
-									]
-								}
-							],
-							[
 								"button",
 								{
 									"__TYPE__": "RepeatableContent",
@@ -82,6 +52,20 @@
 												"__TYPE__": "ExternalLink",
 												"url": "http://twitter.com",
 												"text": "jungle"
+											}
+										}
+									]
+								}
+							],
+							[
+								"body",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Proident esse fugiat reprehenderit magna ad est incididunt commodo ex aliqua deserunt."
 											}
 										}
 									]
@@ -110,6 +94,22 @@
 				"__TYPE__": "FieldContent",
 				"value": "Default",
 				"type": "Select"
+			},
+			"tagline": {
+				"__TYPE__": "FieldContent",
+				"value": "spell",
+				"type": "Text"
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Eu qui ut cillum consectetur reprehenderit elit enim. Cillum pariatur esse tempor labore cupidatat et."
+						}
+					}
+				]
 			}
 		},
 		"items": []
@@ -123,11 +123,6 @@
 				"value": "Default",
 				"type": "Select"
 			},
-			"subtitle": {
-				"__TYPE__": "FieldContent",
-				"value": "general",
-				"type": "Text"
-			},
 			"title": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
@@ -135,17 +130,6 @@
 						"type": "heading1",
 						"content": {
 							"text": "Today"
-						}
-					}
-				]
-			},
-			"description": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Quis dolore non mollit Lorem. Esse ex pariatur sit in mollit quis consequat do qui laboris adipisicing. Tempor ad cillum nostrud reprehenderit Lorem nostrud."
 						}
 					}
 				]
@@ -186,20 +170,6 @@
 								}
 							],
 							[
-								"description",
-								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "paragraph",
-											"content": {
-												"text": "In deserunt ut enim voluptate amet."
-											}
-										}
-									]
-								}
-							],
-							[
 								"button",
 								{
 									"__TYPE__": "RepeatableContent",
@@ -220,7 +190,6 @@
 							[
 								"icon",
 								{
-									"__TYPE__": "ImageContent",
 									"provider": "imgix",
 									"url": "https://images.unsplash.com/photo-1592187270271-9a4b84faa228?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw1fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3NzI2MjkzNjR8MA&ixlib=rb-4.1.0&q=85",
 									"alt": "sliced orange fruit on blue surface",
@@ -240,7 +209,23 @@
 											"y": 0
 										}
 									},
+									"credits": null,
+									"__TYPE__": "ImageContent",
 									"thumbnails": {}
+								}
+							],
+							[
+								"body",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Tempor Lorem magna aliqua deserunt id est consectetur sit."
+											}
+										}
+									]
 								}
 							]
 						]
@@ -265,30 +250,14 @@
 								}
 							],
 							[
-								"description",
-								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "paragraph",
-											"content": {
-												"text": "description",
-												"spans": []
-											},
-											"direction": "ltr"
-										}
-									]
-								}
-							],
-							[
 								"button",
 								{
 									"__TYPE__": "RepeatableContent",
 									"type": "Link",
 									"value": [
 										{
-											"__TYPE__": "LinkContent",
 											"key": "5012f71f-4453-4aa2-b154-40c2085061f5",
+											"__TYPE__": "LinkContent",
 											"value": {
 												"__TYPE__": "ExternalLink",
 												"url": "www.google.com",
@@ -297,9 +266,22 @@
 										}
 									]
 								}
+							],
+							[
+								"body",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Est minim tempor consequat in nostrud eiusmod do cupidatat eu cupidatat occaecat esse amet velit aliquip. Duis id do ipsum labore occaecat."
+											}
+										}
+									]
+								}
 							]
-						],
-						"key": "e0c8bb7b-c295-47dc-99fc-c0f3da022d37"
+						]
 					},
 					{
 						"__TYPE__": "GroupItemContent",
@@ -321,23 +303,20 @@
 								}
 							],
 							[
-								"description",
+								"body",
 								{
 									"__TYPE__": "StructuredTextContent",
 									"value": [
 										{
 											"type": "paragraph",
 											"content": {
-												"text": "Description",
-												"spans": []
-											},
-											"direction": "ltr"
+												"text": "Fugiat nulla elit aliqua ullamco et nulla veniam mollit adipisicing proident ea irure labore aliqua. Anim deserunt consequat exercitation laboris sint irure ex ex dolor aliqua. Commodo proident nisi consequat officia amet culpa esse reprehenderit do mollit et voluptate deserunt fugiat."
+											}
 										}
 									]
 								}
 							]
-						],
-						"key": "e5b65334-1098-4bf1-bd68-80b1227970d7"
+						]
 					}
 				]
 			},
@@ -345,6 +324,22 @@
 				"__TYPE__": "FieldContent",
 				"value": "Default",
 				"type": "Select"
+			},
+			"tagline": {
+				"__TYPE__": "FieldContent",
+				"value": "clearly",
+				"type": "Text"
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Aute duis adipisicing ullamco est elit."
+						}
+					}
+				]
 			}
 		},
 		"items": [

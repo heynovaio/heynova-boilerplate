@@ -268,7 +268,6 @@ interface ColorsDocumentData {
 
   /**
    * Complementary field in *Theme*
-   * Complementary field in *Theme*
    *
    * - **Field Type**: Color
    * - **Placeholder**: *None*
@@ -1466,14 +1465,14 @@ export interface AccordionSliceDefaultPrimaryAccordionItem {
   title: prismic.RichTextField;
 
   /**
-   * Description field in *Accordion → Default → Primary → Accordion*
+   * Body field in *Accordion → Default → Primary → Accordion*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: accordion.default.primary.accordion[].description
+   * - **API ID Path**: accordion.default.primary.accordion[].body
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  description: prismic.RichTextField;
+  body: prismic.RichTextField;
 
   /**
    * Button field in *Accordion → Default → Primary → Accordion*
@@ -1495,22 +1494,22 @@ export interface AccordionSliceHorizontalAccordionPrimaryAccordionItem {
   /**
    * Title field in *Accordion → Horizontal Accordion → Primary → Accordion*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: accordion.horizontalAccordion.primary.accordion[].title
-   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   * - **Documentation**: https://prismic.io/docs/fields/text
    */
-  title: prismic.RichTextField;
+  title: prismic.KeyTextField;
 
   /**
-   * Description field in *Accordion → Horizontal Accordion → Primary → Accordion*
+   * Body field in *Accordion → Horizontal Accordion → Primary → Accordion*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: accordion.horizontalAccordion.primary.accordion[].description
+   * - **API ID Path**: accordion.horizontalAccordion.primary.accordion[].body
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  description: prismic.RichTextField;
+  body: prismic.RichTextField;
 
   /**
    * Button field in *Accordion → Horizontal Accordion → Primary → Accordion*
@@ -1565,14 +1564,14 @@ export interface AccordionSliceDefaultPrimary {
   card_style: prismic.SelectField<"Default" | "Inverted", "filled">;
 
   /**
-   * Subtitle field in *Accordion → Default → Primary*
+   * Tagline field in *Accordion → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: accordion.default.primary.subtitle
+   * - **API ID Path**: accordion.default.primary.tagline
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
-  subtitle: prismic.KeyTextField;
+  tagline: prismic.KeyTextField;
 
   /**
    * Title field in *Accordion → Default → Primary*
@@ -1585,14 +1584,14 @@ export interface AccordionSliceDefaultPrimary {
   title: prismic.RichTextField;
 
   /**
-   * Description field in *Accordion → Default → Primary*
+   * Body field in *Accordion → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: accordion.default.primary.description
+   * - **API ID Path**: accordion.default.primary.body
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  description: prismic.RichTextField;
+  body: prismic.RichTextField;
 
   /**
    * Button field in *Accordion → Default → Primary*
@@ -1662,14 +1661,14 @@ export interface AccordionSliceHorizontalAccordionPrimary {
   card_style: prismic.SelectField<"Default" | "Inverted", "filled">;
 
   /**
-   * Subtitle field in *Accordion → Horizontal Accordion → Primary*
+   * Tagline field in *Accordion → Horizontal Accordion → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: accordion.horizontalAccordion.primary.subtitle
+   * - **API ID Path**: accordion.horizontalAccordion.primary.tagline
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
-  subtitle: prismic.KeyTextField;
+  tagline: prismic.KeyTextField;
 
   /**
    * Title field in *Accordion → Horizontal Accordion → Primary*
@@ -1682,14 +1681,14 @@ export interface AccordionSliceHorizontalAccordionPrimary {
   title: prismic.RichTextField;
 
   /**
-   * Description field in *Accordion → Horizontal Accordion → Primary*
+   * Body field in *Accordion → Horizontal Accordion → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: accordion.horizontalAccordion.primary.description
+   * - **API ID Path**: accordion.horizontalAccordion.primary.body
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  description: prismic.RichTextField;
+  body: prismic.RichTextField;
 
   /**
    * Button field in *Accordion → Horizontal Accordion → Primary*
@@ -1778,14 +1777,14 @@ export interface CallToActionSliceDefaultPrimary {
   card_style: prismic.SelectField<"Default" | "Inverted", "filled">;
 
   /**
-   * Subtitle field in *CallToAction → Default → Primary*
+   * Tagline field in *CallToAction → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: call_to_action.default.primary.subtitle
+   * - **API ID Path**: call_to_action.default.primary.tagline
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
-  subtitle: prismic.KeyTextField;
+  tagline: prismic.KeyTextField;
 
   /**
    * Title field in *CallToAction → Default → Primary*
@@ -1873,14 +1872,14 @@ export interface CallToActionSliceCtaWithBackgroundImagePrimary {
   background_image: prismic.ImageField<never>;
 
   /**
-   * Subtitle field in *CallToAction → CTA - With Background Image → Primary*
+   * Tagline field in *CallToAction → CTA - With Background Image → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: call_to_action.ctaWithBackgroundImage.primary.subtitle
+   * - **API ID Path**: call_to_action.ctaWithBackgroundImage.primary.tagline
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
-  subtitle: prismic.KeyTextField;
+  tagline: prismic.KeyTextField;
 
   /**
    * Title field in *CallToAction → CTA - With Background Image → Primary*
@@ -2003,14 +2002,14 @@ export interface FeatureBlockSliceDefaultPrimaryBlocksItem {
   title: prismic.RichTextField;
 
   /**
-   * Description field in *FeatureBlock → Default → Primary → Blocks*
+   * Body field in *FeatureBlock → Default → Primary → Blocks*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: feature_block.default.primary.blocks[].description
+   * - **API ID Path**: feature_block.default.primary.blocks[].body
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  description: prismic.RichTextField;
+  body: prismic.RichTextField;
 }
 
 /**
@@ -2022,11 +2021,13 @@ export interface FeatureBlockSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
+   * - **Default Value**: Default
    * - **API ID Path**: feature_block.default.primary.background
    * - **Documentation**: https://prismic.io/docs/fields/select
    */
   background: prismic.SelectField<
-    "None" | "Primary" | "Inverted" | "Complementary"
+    "Default" | "Primary" | "Inverted" | "Complementary",
+    "filled"
   >;
 
   /**
@@ -2045,11 +2046,13 @@ export interface FeatureBlockSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
+   * - **Default Value**: None
    * - **API ID Path**: feature_block.default.primary.card_background
    * - **Documentation**: https://prismic.io/docs/fields/select
    */
   card_background: prismic.SelectField<
-    "None" | "Primary" | "Inverted" | "Complementary"
+    "None" | "Primary" | "Inverted" | "Complementary",
+    "filled"
   >;
 
   /**
@@ -2156,14 +2159,14 @@ export interface ImageTextSliceDefaultPrimary {
   imageFit: prismic.SelectField<"contain" | "cover", "filled">;
 
   /**
-   * Subtitle field in *ImageText → Default → Primary*
+   * Tagline field in *ImageText → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: image_text.default.primary.subtitle
+   * - **API ID Path**: image_text.default.primary.tagline
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
-  subtitle: prismic.KeyTextField;
+  tagline: prismic.KeyTextField;
 
   /**
    * Title field in *ImageText → Default → Primary*
@@ -2176,14 +2179,14 @@ export interface ImageTextSliceDefaultPrimary {
   title: prismic.RichTextField;
 
   /**
-   * Description field in *ImageText → Default → Primary*
+   * Body field in *ImageText → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: image_text.default.primary.description
+   * - **API ID Path**: image_text.default.primary.body
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  description: prismic.RichTextField;
+  body: prismic.RichTextField;
 
   /**
    * Button field in *ImageText → Default → Primary*
@@ -2241,14 +2244,14 @@ export interface ImageTextSliceVideoPrimary {
   image_left: prismic.BooleanField;
 
   /**
-   * Subtitle field in *ImageText → Video → Primary*
+   * Tagline field in *ImageText → Video → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: image_text.video.primary.subtitle
+   * - **API ID Path**: image_text.video.primary.tagline
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
-  subtitle: prismic.KeyTextField;
+  tagline: prismic.KeyTextField;
 
   /**
    * Title field in *ImageText → Video → Primary*
@@ -2261,14 +2264,14 @@ export interface ImageTextSliceVideoPrimary {
   title: prismic.RichTextField;
 
   /**
-   * Description field in *ImageText → Video → Primary*
+   * Body field in *ImageText → Video → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: image_text.video.primary.description
+   * - **API ID Path**: image_text.video.primary.body
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  description: prismic.RichTextField;
+  body: prismic.RichTextField;
 
   /**
    * Button field in *ImageText → Video → Primary*
@@ -2398,14 +2401,14 @@ export interface LogoListSliceDefaultPrimary {
   >;
 
   /**
-   * Subtitle field in *LogoList → Default → Primary*
+   * Tagline field in *LogoList → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: logo_list.default.primary.subtitle
+   * - **API ID Path**: logo_list.default.primary.tagline
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
-  subtitle: prismic.KeyTextField;
+  tagline: prismic.KeyTextField;
 
   /**
    * Title field in *LogoList → Default → Primary*
@@ -2892,14 +2895,14 @@ export interface SimpleTextSliceDefaultPrimary {
   >;
 
   /**
-   * Subtitle field in *SimpleText → Default → Primary*
+   * Tagline field in *SimpleText → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: simple_text.default.primary.subtitle
+   * - **API ID Path**: simple_text.default.primary.tagline
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
-  subtitle: prismic.KeyTextField;
+  tagline: prismic.KeyTextField;
 
   /**
    * Title field in *SimpleText → Default → Primary*
@@ -3097,14 +3100,25 @@ export interface TestimonialSliceDefaultPrimary {
   >;
 
   /**
-   * Subtitle field in *Testimonial → Default → Primary*
+   * Card Style field in *Testimonial → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: None
+   * - **API ID Path**: testimonial.default.primary.card_style
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  card_style: prismic.SelectField<"None" | "Default" | "Inverted", "filled">;
+
+  /**
+   * Tagline field in *Testimonial → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: testimonial.default.primary.subtitle
+   * - **API ID Path**: testimonial.default.primary.tagline
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
-  subtitle: prismic.KeyTextField;
+  tagline: prismic.KeyTextField;
 
   /**
    * Title field in *Testimonial → Default → Primary*

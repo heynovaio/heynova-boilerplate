@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Content } from "@prismicio/client";
+import { Content, KeyTextField } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import {
   Container,
@@ -9,6 +9,7 @@ import {
 } from "@/components";
 import { PrismicNextLink } from "@prismicio/next";
 import { HorizontalAccordion } from "@/components/Accordion/HorizontalAccordion";
+import { AccordionSliceHorizontalAccordionPrimaryAccordionItem } from "../../../prismicio-types";
 
 /**
  * Props for `Accordion`.
@@ -19,16 +20,6 @@ export type AccordionProps = SliceComponentProps<Content.AccordionSlice>;
  * Component for "Accordion" Slices.
  */
 
-{
-  /**
-  OVERALL TODOS:
-  - Needs to be fully hooked up to the theme stuff wit the backgrounds etc.
-  - Can pass in the background class for the card and the selected tab class, unsure how we are handling text color though
-  - Same with the color of the border on the card and the buttons within, and the lines between tabs, what colors should they be?
-  
-  */
-}
-
 const Accordion: FC<AccordionProps> = ({ slice }) => {
   if (!slice.primary.accordion) {
     return null;
@@ -36,17 +27,19 @@ const Accordion: FC<AccordionProps> = ({ slice }) => {
 
   const isVertical = slice.variation === "default";
 
-  const titles = slice.primary.accordion.map((item) => item.title || "");
-  const contents = slice.primary.accordion.map(
-    (item) => item.description || "",
-  );
+  const titles = slice.primary.accordion.map(
+    (item) => item.title,
+  ) as KeyTextField[];
+  const contents = slice.primary.accordion.map((item) => item.body || "");
   const images = slice.primary.accordion.map((item) => {
-    return isVertical ? null : (item as any).icon || null;
+    return isVertical
+      ? null
+      : (item as AccordionSliceHorizontalAccordionPrimaryAccordionItem).icon ||
+          null;
   });
   const buttons = slice.primary.button;
 
-  const selectedTabClass = "bg-secondary"; // TODO: replace this with however Faye is setting up all this stuff
-  const backgroundClass = `bg-background-${slice.primary.background ? slice.primary.background.toLocaleLowerCase() : "bg-background-none"}`;
+  const selectedTabClass = `bg-background-${slice.primary.card_style ? slice.primary.card_style.toLocaleLowerCase() : "bg-background-default"}`;
 
   return (
     <Section
@@ -56,9 +49,9 @@ const Accordion: FC<AccordionProps> = ({ slice }) => {
     >
       <Container>
         <ContentBox
-          tagline={slice.primary.subtitle || ""}
+          tagline={slice.primary.tagline || ""}
           title={slice.primary.title}
-          content={<PrismicRichText field={slice.primary.description} />}
+          content={<PrismicRichText field={slice.primary.body} />}
           buttons={slice.primary.button.map((item, index) => {
             return (
               <PrismicNextLink
@@ -75,10 +68,10 @@ const Accordion: FC<AccordionProps> = ({ slice }) => {
           slice.primary.accordion.map((item, index) => (
             <VerticalAccordion
               title={item.title}
-              content={item.description}
+              content={item.body}
               key={index}
               boldTitle={true}
-              background={backgroundClass}
+              background={selectedTabClass}
             />
           ))}
         {!isVertical && (
@@ -87,8 +80,7 @@ const Accordion: FC<AccordionProps> = ({ slice }) => {
             contents={contents}
             images={images}
             buttons={buttons}
-            backgroundClass={backgroundClass}
-            selectedTabClass={selectedTabClass}
+            backgroundClass={selectedTabClass}
           />
         )}
       </Container>
