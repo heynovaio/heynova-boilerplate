@@ -8,11 +8,6 @@
 				"value": "Default",
 				"type": "Select"
 			},
-			"subtitle": {
-				"__TYPE__": "FieldContent",
-				"value": "fair",
-				"type": "Text"
-			},
 			"title": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
@@ -115,6 +110,11 @@
 						]
 					}
 				]
+			},
+			"tagline": {
+				"__TYPE__": "FieldContent",
+				"value": "hospital",
+				"type": "Text"
 			}
 		},
 		"items": []

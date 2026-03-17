@@ -19,16 +19,16 @@ const FeatureBlock: FC<FeatureBlockProps> = ({ slice }) => {
   const selectedBackground = slice.primary.background;
   const selectedCardBackground = slice.primary.card_background;
 
-  const imageBeside = selectedBackground === "None" && leftAligned === true;
+  const imageBeside = selectedBackground === "Default" && leftAligned === true;
   const blocks = (slice.primary.blocks || []).map((block) => ({
     title: block.title as RichTextField,
-    body: block.description as RichTextField,
+    body: block.body as RichTextField,
     image: block.icon as ImageField,
   }));
 
   return (
     <Section
-      styling={`bg-background-${slice.primary.background ? slice.primary.background.toLocaleLowerCase() : "bg-background-none"}`}
+      styling={`bg-background-${slice.primary.background ? slice.primary.background.toLocaleLowerCase() : "none"}`}
     >
       <Container>
         <div className="mt-10">
@@ -39,8 +39,8 @@ const FeatureBlock: FC<FeatureBlockProps> = ({ slice }) => {
                 title={block.title}
                 description={block.body}
                 image={block.image}
-                cardBgColorClass="bg-primary" // TODO: these need to be hooked  up to the right classes once we know which one is using which class
-                borderColorClass="border-red"
+                cardBgColorClass={`bg-background-${selectedCardBackground ? selectedCardBackground.toLocaleLowerCase() : "none"}`}
+                borderColorClass="color-primary"
                 imageStyle={
                   imageBeside
                     ? "imageBeside"

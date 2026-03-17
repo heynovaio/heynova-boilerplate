@@ -69,8 +69,8 @@ const ImageText = ({ slice }: ImageTextProps): JSX.Element => {
         <div className="w-full md:w-1/2">
           <ContentBox
             title={slice.primary.title}
-            tagline={slice.primary.subtitle || ""}
-            content={<PrismicRichText field={slice.primary.description} />}
+            tagline={slice.primary.tagline || ""}
+            content={<PrismicRichText field={slice.primary.body} />}
             buttons={buttons}
           />
         </div>

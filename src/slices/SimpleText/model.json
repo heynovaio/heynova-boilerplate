@@ -34,10 +34,10 @@
             "default_value": "Default"
           }
         },
-        "subtitle": {
+        "tagline": {
           "type": "Text",
           "config": {
-            "label": "Subtitle",
+            "label": "Tagline",
             "placeholder": ""
           }
         },

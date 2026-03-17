@@ -28,7 +28,7 @@ const SimpleText: FC<SimpleTextProps> = ({ slice }) => {
     >
       <Container>
         <ContentBox
-          tagline={slice.primary.subtitle || ""}
+          tagline={slice.primary.tagline || ""}
           title={slice.primary.title}
           content={<PrismicRichText field={slice.primary.body} />}
           width="narrow"

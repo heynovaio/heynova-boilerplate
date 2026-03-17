@@ -37,10 +37,10 @@
             "default_value": "Default"
           }
         },
-        "subtitle": {
+        "tagline": {
           "type": "Text",
           "config": {
-            "label": "Subtitle",
+            "label": "Tagline",
             "placeholder": ""
           }
         },
@@ -50,7 +50,7 @@
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": false,
-            "multi": "heading1,heading2,heading3"
+            "multi": "heading2,heading3"
           }
         },
         "body": {
@@ -118,10 +118,10 @@
             "thumbnails": []
           }
         },
-        "subtitle": {
+        "tagline": {
           "type": "Text",
           "config": {
-            "label": "Subtitle",
+            "label": "Tagline",
             "placeholder": ""
           }
         },
@@ -131,7 +131,7 @@
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": false,
-            "multi": "heading1,heading2,heading3"
+            "multi": "heading2,heading3"
           }
         },
         "body": {

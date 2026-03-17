@@ -12,17 +12,12 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading1",
+						"type": "heading2",
 						"content": {
-							"text": "Catch"
+							"text": "Essential"
 						}
 					}
 				]
-			},
-			"subtitle": {
-				"__TYPE__": "FieldContent",
-				"value": "caught",
-				"type": "Text"
 			},
 			"body": {
 				"__TYPE__": "StructuredTextContent",
@@ -105,6 +100,11 @@
 						]
 					}
 				]
+			},
+			"tagline": {
+				"__TYPE__": "FieldContent",
+				"value": "electric",
+				"type": "Text"
 			}
 		},
 		"items": []

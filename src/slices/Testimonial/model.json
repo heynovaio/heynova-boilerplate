@@ -25,10 +25,23 @@
             "default_value": "Default"
           }
         },
-        "subtitle": {
+        "card_style": {
+          "type": "Select",
+          "config": {
+            "label": "Card Style",
+            "placeholder": "",
+            "options": [
+              "None",
+              "Default",
+              "Inverted"
+            ],
+            "default_value": "None"
+          }
+        },
+        "tagline": {
           "type": "Text",
           "config": {
-            "label": "Subtitle",
+            "label": "Tagline",
             "placeholder": ""
           }
         },

@@ -31,12 +31,12 @@ export const VerticalAccordion: React.FC<VerticalAccordionProps> = ({
 }) => {
   return (
     <section
-      className={`bg-background-${background} w-full accordion font-primary my-4 rounded-[5px] accordion-content antialiased`}
+      className={`${background} w-full accordion font-primary my-4 rounded-[5px] accordion-content antialiased`}
     >
       <Disclosure>
         {({ open }) => (
           <div>
-            <DisclosureButton className="print-reveal flex flex-row justify-between items-center p-4 w-full text-h3 rounded-[5px] print:p-2 print:font-bold ">
+            <DisclosureButton className="focus print-reveal flex flex-row justify-between items-center p-4 w-full text-h3 rounded-[5px] print:p-2 print:font-bold ">
               <div className="flex items-center text-left gap-4">
                 {image && <ResponsiveImage image={image} />}
                 <div
@@ -58,7 +58,7 @@ export const VerticalAccordion: React.FC<VerticalAccordionProps> = ({
             <DisclosurePanel
               transition
               unmount={false}
-              className={`print-reveal p-4 print:p-1 print:m-0 transition duration-200 ease-out data-closed:-translate-y-6 data-closed:opacity-0`}
+              className={`print-reveal focus p-4 print:p-1 print:m-0 transition duration-200 ease-out data-closed:-translate-y-6 data-closed:opacity-0`}
             >
               <PrismicRichText field={content} />
               {button && <div className="my-4">{button}</div>}

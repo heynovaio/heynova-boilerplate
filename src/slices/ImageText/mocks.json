@@ -61,18 +61,18 @@
 				"__TYPE__": "BooleanContent",
 				"value": false
 			},
-			"subtitle": {
+			"tagline": {
 				"__TYPE__": "FieldContent",
-				"value": "eager",
+				"value": "medicine",
 				"type": "Text"
 			},
-			"description": {
+			"body": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Incididunt exercitation elit aute sit magna magna ea pariatur pariatur sint quis. Eu enim nostrud nulla consectetur mollit occaecat pariatur reprehenderit reprehenderit dolore. Duis do labore aliqua aliquip sint labore aliquip proident dolor deserunt cupidatat pariatur cupidatat."
+							"text": "Dolor laboris irure fugiat occaecat culpa ut voluptate veniam laboris non consectetur id esse. Ad aute mollit deserunt labore aute aute."
 						}
 					}
 				]
@@ -173,18 +173,18 @@
 				"__TYPE__": "BooleanContent",
 				"value": true
 			},
-			"subtitle": {
+			"tagline": {
 				"__TYPE__": "FieldContent",
-				"value": "peace",
+				"value": "mouse",
 				"type": "Text"
 			},
-			"description": {
+			"body": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Cupidatat ullamco velit occaecat occaecat dolor quis sunt sint labore ipsum. Officia cupidatat ipsum et aute laboris enim quis."
+							"text": "Lorem sit duis amet esse aute proident id est laboris labore esse commodo do. Culpa est duis nisi enim consectetur aute consectetur laborum sit. Nisi dolore deserunt nisi nulla sint nulla cupidatat minim consectetur culpa sint laborum commodo ut."
 						}
 					}
 				]

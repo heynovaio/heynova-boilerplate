@@ -37,10 +37,10 @@
             "default_value": "Default"
           }
         },
-        "subtitle": {
+        "tagline": {
           "type": "Text",
           "config": {
-            "label": "Subtitle",
+            "label": "Tagline",
             "placeholder": ""
           }
         },
@@ -50,13 +50,13 @@
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading1,heading2"
+            "multi": "heading2,heading3"
           }
         },
-        "description": {
+        "body": {
           "type": "StructuredText",
           "config": {
-            "label": "Description",
+            "label": "Body",
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,preformatted,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
@@ -88,10 +88,10 @@
                   "multi": "heading3,heading4,heading5,heading2"
                 }
               },
-              "description": {
+              "body": {
                 "type": "StructuredText",
                 "config": {
-                  "label": "Description",
+                  "label": "Body",
                   "placeholder": "",
                   "allowTargetBlank": true,
                   "multi": "paragraph,preformatted,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
@@ -147,10 +147,10 @@
             "default_value": "Default"
           }
         },
-        "subtitle": {
+        "tagline": {
           "type": "Text",
           "config": {
-            "label": "Subtitle",
+            "label": "Tagline",
             "placeholder": ""
           }
         },
@@ -163,10 +163,10 @@
             "multi": "heading1,heading2"
           }
         },
-        "description": {
+        "body": {
           "type": "StructuredText",
           "config": {
-            "label": "Description",
+            "label": "Body",
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,preformatted,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
@@ -190,18 +190,16 @@
             "repeat": true,
             "fields": {
               "title": {
-                "type": "StructuredText",
+                "type": "Text",
                 "config": {
                   "label": "Title",
-                  "placeholder": "",
-                  "allowTargetBlank": true,
-                  "multi": "heading3,heading4,heading5,heading2"
+                  "placeholder": ""
                 }
               },
-              "description": {
+              "body": {
                 "type": "StructuredText",
                 "config": {
-                  "label": "Description",
+                  "label": "Body",
                   "placeholder": "",
                   "allowTargetBlank": true,
                   "multi": "paragraph,preformatted,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"

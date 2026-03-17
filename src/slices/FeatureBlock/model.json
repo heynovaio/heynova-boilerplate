@@ -18,11 +18,12 @@
             "label": "Background",
             "placeholder": "",
             "options": [
-              "None",
+              "Default",
               "Primary",
               "Inverted",
               "Complementary"
-            ]
+            ],
+            "default_value": "Default"
           }
         },
         "alignment": {
@@ -44,7 +45,8 @@
               "Primary",
               "Inverted",
               "Complementary"
-            ]
+            ],
+            "default_value": "None"
           }
         },
         "number_of_columns": {
@@ -82,10 +84,10 @@
                   "multi": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
                 }
               },
-              "description": {
+              "body": {
                 "type": "StructuredText",
                 "config": {
-                  "label": "Description",
+                  "label": "Body",
                   "placeholder": "",
                   "allowTargetBlank": true,
                   "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"

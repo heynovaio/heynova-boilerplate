@@ -8,18 +8,13 @@
 				"value": "Default",
 				"type": "Select"
 			},
-			"subtitle": {
-				"__TYPE__": "FieldContent",
-				"value": "situation",
-				"type": "Text"
-			},
 			"title": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading1",
+						"type": "heading2",
 						"content": {
-							"text": "Power"
+							"text": "Minerals"
 						}
 					}
 				]
@@ -54,6 +49,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "Inverted",
 				"type": "Select"
+			},
+			"tagline": {
+				"__TYPE__": "FieldContent",
+				"value": "morning",
+				"type": "Text"
 			}
 		},
 		"items": []
@@ -67,18 +67,13 @@
 				"value": "Default",
 				"type": "Select"
 			},
-			"subtitle": {
-				"__TYPE__": "FieldContent",
-				"value": "fair",
-				"type": "Text"
-			},
 			"title": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading1",
+						"type": "heading2",
 						"content": {
-							"text": "Increase"
+							"text": "Screen"
 						}
 					}
 				]
@@ -136,6 +131,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "Inverted",
 				"type": "Select"
+			},
+			"tagline": {
+				"__TYPE__": "FieldContent",
+				"value": "practice",
+				"type": "Text"
 			}
 		},
 		"items": [
