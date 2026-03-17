@@ -1,7 +1,56 @@
 /* Styles are organized alphabetically */
 /* File is primarily for color + visual styles, layout styling is excluded */
 @layer components {
-  
+}
+
+/* Carousel - Makes all of them the same size */
+.tabbed-carousel .react-multi-carousel-item {
+  align-content: center;
+  justify-content: center;
+}
+
+.tabbed-carousel .react-multi-carousel-list {
+  overflow: visible !important;
+}
+
+.tabbed-carousel .react-multi-carousel-track {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: stretch !important;
+}
+
+.tabbed-carousel .react-multi-carousel-item {
+  height: auto !important;
+  display: flex !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+}
+
+/* Testimonial Carousel */
+.testimonial-carousel .react-multi-carousel-list {
+  overflow: visible !important;
+}
+
+.testimonial-carousel .react-multi-carousel-track {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: stretch !important;
+}
+
+.testimonial-carousel-item {
+  height: auto !important;
+  display: flex !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+.carousel-button {
+  @apply flex flex-row items-center gap-2 bg-white text-bodyLarge text-midnight border border-midnight rounded-md px-4 py-2 shadow transition;
+}
+
+.logo-carousel-tile {
+  @apply flex items-center justify-center bg-white rounded-2xl p-4 h-32;
 }
 
 .content-box {

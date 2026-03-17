@@ -7,3 +7,7 @@ export { VerticalAccordion } from "./Accordion/VerticalAccordion";
 export { Grid } from "./Grid/Grid";
 export { NumberList } from "./NumberList/NumberList";
 export * from "./Intro";
+export * from "./Carousel";
+export * from "./Cards";
+export * from "./Buttons";
+export * from "./TextStyle";

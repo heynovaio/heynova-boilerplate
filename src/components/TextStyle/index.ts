@@ -1,0 +1,2 @@
+export { MaskedPrismicRichText } from "./MaskedRichText";
+  

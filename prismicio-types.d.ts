@@ -1948,7 +1948,180 @@ export type CallToActionSlice = prismic.SharedSlice<
 >;
 
 /**
- * Default variation for Carousel Slice
+ * Item in *Carousel → Carousel - Card per Tab → Primary → Tab*
+ */
+export interface CarouselSliceDefaultPrimaryTabItem {
+  /**
+   * Tab Label field in *Carousel → Carousel - Card per Tab → Primary → Tab*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carousel.default.primary.tab[].tab_label
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  tab_label: prismic.KeyTextField;
+
+  /**
+   * Card Title field in *Carousel → Carousel - Card per Tab → Primary → Tab*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carousel.default.primary.tab[].card_title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  card_title: prismic.RichTextField;
+
+  /**
+   * Card Description field in *Carousel → Carousel - Card per Tab → Primary → Tab*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carousel.default.primary.tab[].card_description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  card_description: prismic.RichTextField;
+
+  /**
+   * Card Image field in *Carousel → Carousel - Card per Tab → Primary → Tab*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carousel.default.primary.tab[].card_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  card_image: prismic.ImageField<never>;
+
+  /**
+   * Card Button field in *Carousel → Carousel - Card per Tab → Primary → Tab*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carousel.default.primary.tab[].card_button
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  card_button: prismic.Repeatable<
+    prismic.LinkField<string, string, unknown, prismic.FieldState, never>
+  >;
+
+  /**
+   * Card Link field in *Carousel → Carousel - Card per Tab → Primary → Tab*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carousel.default.primary.tab[].card_link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  card_link: prismic.Repeatable<
+    prismic.LinkField<string, string, unknown, prismic.FieldState, never>
+  >;
+}
+
+/**
+ * Item in *Carousel → Carousel - MultiCard per Tab → Primary → Tab*
+ */
+export interface CarouselSliceCarouselMultiCardPrimaryTabItem {
+  /**
+   * Tab Label field in *Carousel → Carousel - MultiCard per Tab → Primary → Tab*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carousel.carouselMultiCard.primary.tab[].tab_label
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  tab_label: prismic.KeyTextField;
+
+  /**
+   * Card Title field in *Carousel → Carousel - MultiCard per Tab → Primary → Tab*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carousel.carouselMultiCard.primary.tab[].card_title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  card_title: prismic.RichTextField;
+
+  /**
+   * Card Description field in *Carousel → Carousel - MultiCard per Tab → Primary → Tab*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carousel.carouselMultiCard.primary.tab[].card_description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  card_description: prismic.RichTextField;
+
+  /**
+   * Card Image field in *Carousel → Carousel - MultiCard per Tab → Primary → Tab*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carousel.carouselMultiCard.primary.tab[].card_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  card_image: prismic.ImageField<never>;
+
+  /**
+   * Card Button field in *Carousel → Carousel - MultiCard per Tab → Primary → Tab*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carousel.carouselMultiCard.primary.tab[].card_button
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  card_button: prismic.Repeatable<
+    prismic.LinkField<string, string, unknown, prismic.FieldState, never>
+  >;
+
+  /**
+   * Card Link field in *Carousel → Carousel - MultiCard per Tab → Primary → Tab*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carousel.carouselMultiCard.primary.tab[].card_link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  card_link: prismic.Repeatable<
+    prismic.LinkField<string, string, unknown, prismic.FieldState, never>
+  >;
+}
+
+/**
+ * Primary content in *Carousel → Carousel - Card per Tab → Primary*
+ */
+export interface CarouselSliceDefaultPrimary {
+  /**
+   * Title field in *Carousel → Carousel - Card per Tab → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carousel.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Body field in *Carousel → Carousel - Card per Tab → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carousel.default.primary.body
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * Tab field in *Carousel → Carousel - Card per Tab → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carousel.default.primary.tab[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  tab: prismic.GroupField<Simplify<CarouselSliceDefaultPrimaryTabItem>>;
+}
+
+/**
+ * Carousel - Card per Tab variation for Carousel Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -1956,14 +2129,66 @@ export type CallToActionSlice = prismic.SharedSlice<
  */
 export type CarouselSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<CarouselSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Carousel → Carousel - MultiCard per Tab → Primary*
+ */
+export interface CarouselSliceCarouselMultiCardPrimary {
+  /**
+   * Title field in *Carousel → Carousel - MultiCard per Tab → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carousel.carouselMultiCard.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Body field in *Carousel → Carousel - MultiCard per Tab → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carousel.carouselMultiCard.primary.body
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * Tab field in *Carousel → Carousel - MultiCard per Tab → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carousel.carouselMultiCard.primary.tab[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  tab: prismic.GroupField<
+    Simplify<CarouselSliceCarouselMultiCardPrimaryTabItem>
+  >;
+}
+
+/**
+ * Carousel - MultiCard per Tab variation for Carousel Slice
+ *
+ * - **API ID**: `carouselMultiCard`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type CarouselSliceCarouselMultiCard = prismic.SharedSliceVariation<
+  "carouselMultiCard",
+  Simplify<CarouselSliceCarouselMultiCardPrimary>,
   never
 >;
 
 /**
  * Slice variation for *Carousel*
  */
-type CarouselSliceVariation = CarouselSliceDefault;
+type CarouselSliceVariation =
+  | CarouselSliceDefault
+  | CarouselSliceCarouselMultiCard;
 
 /**
  * Carousel Shared Slice
@@ -3449,8 +3674,13 @@ declare module "@prismicio/client" {
       CallToActionSliceDefault,
       CallToActionSliceCtaWithBackgroundImage,
       CarouselSlice,
+      CarouselSliceDefaultPrimaryTabItem,
+      CarouselSliceDefaultPrimary,
+      CarouselSliceCarouselMultiCardPrimaryTabItem,
+      CarouselSliceCarouselMultiCardPrimary,
       CarouselSliceVariation,
       CarouselSliceDefault,
+      CarouselSliceCarouselMultiCard,
       FeatureBlockSlice,
       FeatureBlockSliceDefaultPrimaryBlocksItem,
       FeatureBlockSliceDefaultPrimary,
