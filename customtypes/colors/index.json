@@ -1,0 +1,132 @@
+{
+  "format": "custom",
+  "id": "colors",
+  "label": "Theme",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Brand Settings": {
+      "base_contrast_mode": {
+        "type": "Boolean",
+        "config": {
+          "label": "Base Contrast Mode",
+          "placeholder_false": "Light",
+          "placeholder_true": "Dark",
+          "default_value": false
+        }
+      },
+      "radius_scale": {
+        "type": "Select",
+        "config": {
+          "label": "Radius Scale",
+          "placeholder": "",
+          "options": ["Sharp", "Soft", "Pill"],
+          "default_value": "Sharp"
+        }
+      },
+      "shadow_style": {
+        "type": "Select",
+        "config": {
+          "label": "Shadow Style",
+          "placeholder": "",
+          "options": ["Flat", "Crisp", "Floaty"],
+          "default_value": "Flat"
+        }
+      }
+    },
+    "Brand Colors": {
+      "primary": {
+        "type": "Color",
+        "config": {
+          "label": "Primary",
+          "placeholder": ""
+        }
+      },
+      "secondary": {
+        "type": "Color",
+        "config": {
+          "label": "Secondary",
+          "placeholder": ""
+        }
+      },
+      "highlight": {
+        "type": "Color",
+        "config": {
+          "label": "Highlight",
+          "placeholder": ""
+        }
+      },
+      "complementary": {
+        "type": "Color",
+        "config": {
+          "label": "Complementary",
+          "placeholder": ""
+        }
+      },
+      "black": {
+        "type": "Color",
+        "config": {
+          "label": "Black",
+          "placeholder": ""
+        }
+      },
+      "white": {
+        "type": "Color",
+        "config": {
+          "label": "White",
+          "placeholder": ""
+        }
+      },
+      "hyperlink": {
+        "type": "Color",
+        "config": {
+          "label": "Hyperlink",
+          "placeholder": ""
+        }
+      },
+      "hover": {
+        "type": "Color",
+        "config": {
+          "label": "Hover",
+          "placeholder": ""
+        }
+      },
+      "focus": {
+        "type": "Color",
+        "config": {
+          "label": "Focus",
+          "placeholder": ""
+        }
+      }
+    },
+    "Typography": {
+      "type_preset": {
+        "type": "Select",
+        "config": {
+          "label": "Type Preset",
+          "placeholder": "",
+          "options": ["Modern", "Editorial", "Classic"],
+          "default_value": "Modern"
+        }
+      },
+      "title_font": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Title Font",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "body_font": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Body Font",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      }
+    }
+  }
+}

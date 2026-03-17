@@ -18,18 +18,11 @@
             "label": "Background",
             "placeholder": "",
             "options": [
-              "None",
-              "Primary",
-              "Secondary"
+              "Default",
+              "Complementary",
+              "Inverted"
             ],
-            "default_value": "None"
-          }
-        },
-        "subtitle": {
-          "type": "Text",
-          "config": {
-            "label": "Subtitle",
-            "placeholder": ""
+            "default_value": "Default"
           }
         },
         "title": {

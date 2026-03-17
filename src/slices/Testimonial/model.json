@@ -18,17 +18,30 @@
             "label": "Background",
             "placeholder": "",
             "options": [
+              "Default",
+              "Complementary",
+              "Inverted"
+            ],
+            "default_value": "Default"
+          }
+        },
+        "card_style": {
+          "type": "Select",
+          "config": {
+            "label": "Card Style",
+            "placeholder": "",
+            "options": [
               "None",
-              "Primary",
-              "Secondary"
+              "Default",
+              "Inverted"
             ],
             "default_value": "None"
           }
         },
-        "subtitle": {
+        "tagline": {
           "type": "Text",
           "config": {
-            "label": "Subtitle",
+            "label": "Tagline",
             "placeholder": ""
           }
         },

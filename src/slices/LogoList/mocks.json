@@ -5,24 +5,19 @@
 		"primary": {
 			"background": {
 				"__TYPE__": "FieldContent",
-				"value": "Primary",
+				"value": "Default",
 				"type": "Select"
 			},
 			"title": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading1",
+						"type": "heading2",
 						"content": {
-							"text": "Catch"
+							"text": "Essential"
 						}
 					}
 				]
-			},
-			"subtitle": {
-				"__TYPE__": "FieldContent",
-				"value": "caught",
-				"type": "Text"
 			},
 			"body": {
 				"__TYPE__": "StructuredTextContent",
@@ -93,8 +88,8 @@
 							[
 								"link",
 								{
-									"__TYPE__": "LinkContent",
 									"key": "272391bf-8136-4b3a-b589-3ab545888fd2",
+									"__TYPE__": "LinkContent",
 									"value": {
 										"__TYPE__": "ExternalLink",
 										"url": "http://google.com",
@@ -105,6 +100,11 @@
 						]
 					}
 				]
+			},
+			"tagline": {
+				"__TYPE__": "FieldContent",
+				"value": "electric",
+				"type": "Text"
 			}
 		},
 		"items": []

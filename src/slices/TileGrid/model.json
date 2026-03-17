@@ -18,11 +18,35 @@
             "label": "Background",
             "placeholder": "",
             "options": [
-              "None",
-              "Primary",
-              "Secondary"
+              "Default",
+              "Complementary",
+              "Inverted"
             ],
-            "default_value": "None"
+            "default_value": "Default"
+          }
+        },
+        "card_style": {
+          "type": "Select",
+          "config": {
+            "label": "Card Style",
+            "placeholder": "",
+            "options": [
+              "Default",
+              "Inverted"
+            ],
+            "default_value": "Default"
+          }
+        },
+        "image_style": {
+          "type": "Select",
+          "config": {
+            "label": "Image Style",
+            "placeholder": "",
+            "options": [
+              "Full Width",
+              "Centered                                                                                                                                                   ",
+              "Icon"
+            ]
           }
         },
         "columns": {

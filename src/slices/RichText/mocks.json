@@ -5,13 +5,8 @@
 		"primary": {
 			"background": {
 				"__TYPE__": "FieldContent",
-				"value": "Secondary",
+				"value": "Default",
 				"type": "Select"
-			},
-			"subtitle": {
-				"__TYPE__": "FieldContent",
-				"value": "world",
-				"type": "Text"
 			},
 			"title": {
 				"__TYPE__": "StructuredTextContent",

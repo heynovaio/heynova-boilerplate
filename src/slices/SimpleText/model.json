@@ -27,17 +27,17 @@
             "label": "Background",
             "placeholder": "",
             "options": [
-              "None",
-              "Primary",
-              "Secondary"
+              "Default",
+              "Complementary",
+              "Inverted"
             ],
-            "default_value": "None"
+            "default_value": "Default"
           }
         },
-        "subtitle": {
+        "tagline": {
           "type": "Text",
           "config": {
-            "label": "Subtitle",
+            "label": "Tagline",
             "placeholder": ""
           }
         },

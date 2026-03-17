@@ -12,22 +12,13 @@
           "label": "UID"
         }
       },
-      "background_color": {
+      "background": {
         "type": "Select",
         "config": {
-          "label": "Background Color",
+          "label": "Background",
           "placeholder": "",
-          "options": ["White", "Light", "Dark"],
-          "default_value": "White"
-        }
-      },
-      "category": {
-        "type": "Link",
-        "config": {
-          "label": "Category",
-          "select": "document",
-          "repeat": false,
-          "customtypes": ["resource_category"]
+          "options": ["Default", "Complementary", "Inverted"],
+          "default_value": "Default"
         }
       },
       "title": {
