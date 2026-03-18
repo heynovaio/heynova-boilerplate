@@ -37,6 +37,15 @@
             "default_value": "Default"
           }
         },
+        "text_alignment": {
+          "type": "Boolean",
+          "config": {
+            "label": "Text Alignment",
+            "placeholder_false": "Centered",
+            "placeholder_true": "Left",
+            "default_value": false
+          }
+        },
         "tagline": {
           "type": "Text",
           "config": {
