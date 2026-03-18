@@ -13,6 +13,10 @@ export type CallToActionProps = SliceComponentProps<Content.CallToActionSlice>;
  * Component for "CallToAction" Slices.
  */
 const CallToAction: FC<CallToActionProps> = ({ slice }) => {
+  const textAlignment =
+    slice.primary.text_alignment === false ? "text-center" : "text-left";
+  const buttonAlignment =
+    slice.primary.text_alignment === false ? "items-center" : "items-start";
   return (
     <Section
       data-slice-type={slice.slice_type}
@@ -21,7 +25,7 @@ const CallToAction: FC<CallToActionProps> = ({ slice }) => {
     >
       <Container>
         <Section
-          styling={`bg-background-${slice.primary.card_style} cta rounded-4xl`}
+          styling={`bg-background-${slice.primary.card_style} ${textAlignment} cta rounded-4xl`}
         >
           <ContentBox
             tagline={slice.primary.tagline || ""}
@@ -39,7 +43,7 @@ const CallToAction: FC<CallToActionProps> = ({ slice }) => {
               </PrismicNextLink>
             ))}
             width="narrow"
-            className="flex flex-col justify-center gap-2 sm:w-2/3 mx-auto px-4 sm:px-0"
+            className={`flex flex-col justify-center gap-2 sm:w-2/3 mx-auto px-4 sm:px-0  ${buttonAlignment}`}
           />
         </Section>
       </Container>
