@@ -1777,6 +1777,17 @@ export interface CallToActionSliceDefaultPrimary {
   card_style: prismic.SelectField<"Default" | "Inverted", "filled">;
 
   /**
+   * Text Alignment field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: call_to_action.default.primary.text_alignment
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  text_alignment: prismic.BooleanField;
+
+  /**
    * Tagline field in *CallToAction → Default → Primary*
    *
    * - **Field Type**: Text
