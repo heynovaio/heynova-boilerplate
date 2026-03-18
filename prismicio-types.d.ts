@@ -1923,6 +1923,17 @@ export interface CallToActionSliceCtaWithBackgroundImagePrimary {
   buttons: prismic.Repeatable<
     prismic.LinkField<string, string, unknown, prismic.FieldState, never>
   >;
+
+  /**
+   * Text Alignment field in *CallToAction → CTA - With Background Image → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: call_to_action.ctaWithBackgroundImage.primary.text_alignment
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  text_alignment: prismic.BooleanField;
 }
 
 /**
