@@ -71,8 +71,16 @@ export const Footer = ({ global, slices, footerData }: FooterProps) => {
         </div>
       </nav>
       <div className="flex flex-col justify-center items-center mt-6 footer-links mb-6">
+        <p className="mt-6 text-center text-button">{footerData?.copyright}</p>
         <p className="mt-6 text-center text-button">
-          {footerData?.copyright}
+          Website by:{" "}
+          <a
+            className="text-white no-underline"
+            href="https://heynova.io/en-ca"
+            target="_blank"
+          >
+            Hey Nova
+          </a>
         </p>
       </div>
     </footer>
